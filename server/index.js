@@ -34,15 +34,15 @@ massive({
 
 //Endpoints
 //Other Endpoints
-// app.get(`/api/plants`, cardCtrl.getPlants)
-// app.get(`/api/plants/:id`, cardCtrl.getPlant)
-// app.post(`/api/plants`, cardCtrl.addPlant)
-// app.delete(`/api/plants/:id`, cardCtrl.deletePlant)
-// app.put(`/api/plants/:id`, cardCtrl.editPlant)
+app.get(`/api/plants`, cardCtrl.getPlants)
+app.get(`/api/plants/:id`, cardCtrl.getPlant)
+app.post(`/api/plants`, cardCtrl.addPlant)
+app.delete(`/api/plants/:id`, cardCtrl.deletePlant)
+app.put(`/api/plants/:id`, cardCtrl.editPlant)
 
 //Auth Endpoints
 app.post('/auth/register', authCtrl.register)
 app.post('/auth/login', authCtrl.login)
-// app.get('/auth/user', authCtrl.getUser)
-// app.delete('/auth/logout', authCtrl.logout)
-// app.put('/auth/user', authCtrl.updateUser)
+app.get('/auth/user', authCtrl.getUser)
+app.delete('/auth/logout', authCtrl.logout)
+app.put('/auth/user', authCtrl.updateUser)

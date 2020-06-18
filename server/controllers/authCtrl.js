@@ -1,5 +1,7 @@
 module.export = {
-    register: ( req, res ) => {
+    register: async ( req, res ) => {
+        const db = req.app.get('db')
+        const {email, password, profile_pic} = req.body;
 
     },
     login: ( req, res ) => {

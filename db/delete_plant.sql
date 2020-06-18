@@ -1,0 +1,1 @@
+DELETE FROM users_plants where plant_id = $1;

@@ -58,7 +58,7 @@ URL, REST methods, and a sample of the data that is being sent or received for e
 - GET: This will get all user specific plants because we are already logged in. app.get(`/api/plants/:id`, cardCtrl.getPlant)
 - POST: will add new plant to the list of plants in the User's collection. app.post(`/api/plants`, cardCtrl.addPlant)
 - DELETE: Can delete plant from the list of plants in the User's collection. app.delete(`/api/plants/:id`, cardCtrl.deletePlant)
-- PUT: Can edit plant in the list of plants. app.put(`/api/plants/:id`, cardCtrl.editPost)
+- PUT: Can edit plant in the list of plants. app.put(`/api/plants/:id`, cardCtrl.editPlant)
 
 #### Store Endpoints
 - GET: This will get 10 random plants from the plant API. app.get(`https://trefle.io/api/plants/{id}`, storeCtrl.getPlants)

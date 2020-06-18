@@ -68,7 +68,21 @@ module.exports = {
         res.sendStatus(200);
 
     },
-    updateUser: ( req, res ) => {
+    updateUser: async ( req, res ) => {
+        const db = req.app.get('db')
+        const {email, password, first_name, last_name, profile_pic} = req.body;
 
-    },
+        const salt = bcrypt.genSaltSync(10)
+        const hash = bcrypt.hashSync(password, salt)
+
+        const updateUser = await db.update_user([email, hash])
+
+        const updateUserInfo = await db.update_user_info([first_name, last_name, profile_pic, updateUser[0].user_id]) 
+
+        const updateUserObj = {...updateUser[0], ...updateUserInfo[0]}
+
+        delete updateUserObj.password
+
+        req.session.user = updateUserObj
+    }
 }

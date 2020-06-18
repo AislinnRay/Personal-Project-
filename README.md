@@ -7,8 +7,6 @@ To support new and experienced plant lovers alike, Plantsiful is a plant care ma
 
 
 ## Features:
-<img src = "./images/.png">
-
 ### Current features include:
 Users are able to sign in or register. Users will receive an email notification confirming their registration.
 App includes the capability to create unique plant profiles with watering schedules. Plant profiles include an image of the plant, common name of plant, scientific name of plant, special instructions, and customizable watering schedule. 
@@ -22,84 +20,52 @@ Plants are organized by when they need to be watered which includes care instruc
 - Plant growth will be charted over time using input of measurements and unique plant biometrics. 
 - Virtual house map with interactive location of each plant.
 
-
-## Functionality/Technologies utilized:
-NodeMailer
-Sass
-Chart.js
-Hosting
-Hooks
-D3
-
 ## App Colors:
-<img src = "./images/colorHex.png">
+<img src = "./images/Purple Orchid color pallette.png">
 
 
 ## View/ Controller:
-### Wireframe (View)
-<img src = "./images/WireFrame.png">
-<img src = "./images/WireFrame with Redux.png">
+### Wireframe:
+<img src = "./images/Wireframe.png">
 
-### Landing.js (View)
-- This will be the first screen displayed before a user logs in. It will show a navbar with five icons for view pages, "Features, About, Contact, Register, SignIn". In the center view it will show a nice quote to show the importance of this site with a Sign In button or a register button below. Next, it will have a carousel that will move through the navbar giving a brief explanation into the next clickable view. Then lastly a footer with social media pages and copyright. These last two features along with the navbar will persist in the log in and register components.
-<img src = "./images/Landing.png">
+### Component Tree:
+<img src = "./images/Component-Tree.png">
 
 ### SignIn.js (View) 
 - This is the Sign in page where the user will be able to Sign into their already existing account. It will handle authentication. Below is a route to the register page if the user needs to register. 
-<img src = "./images/SignIn.png"> 
+<img src = "./images/SignIn and Register.png"> 
 
 ### Register.js (View)
 - This is the Register page where the user will be able to register a new account and then be redirected back to the login component. This component will have similar functionality as SignIn.
-<img src = "./images/Register.png">
 
 ### Collection.js (View)
 - This will be the first screen when a user is successfully logged in. It will show a navbar with five icons for view pages, "Collection, Add, Plant Metrics, Shop, Profile." A list of plant profiles will be displayed centered on the screen. The navbar will persist no matter what view user is in.
 
-### Profile.js (View)
-- If the user clicks on profile from the Collection.js (or other view),  they will be directed to the profile page where they will be able to view their profile information: username, and profile pic, and button to log out.
-
-- In the example the user 
-<img src = "./images/Profile.png">
-
-### UpdateProfile.js (View)
-- The user will access this component view by clicking the profile image in the top right corner once signed in. Here the user will be able to update their username and profile picture after filling in the required field and clicking "Update" or to cancel it by clicking "Cancel." 
-<img src = "./images/UpdateProfile.png">
-
-### Features.js (View)
--  This component will display the main features of the application and reason for it being made. This component will aid the user by providing an understanding of the solutions this app provides and influence them to use the app.
-<img src = "./images/Features.png">
-
-### About.js (View)
-- This component will just show the user about Plantsiful and how it came to be.
-<img src = "./images/About.png">
-
-### Contact.js (View)
-- The contact component will be useful in that it has the potential to allow users to send me emails regarding the app/website’s functionality. If bugs are detected or errors occur on the site this will be helpful in allowing the user to provide some simple feedback. 
-<img src = "./images/Contact.png">
 
 
 ## Endpoints
 URL, REST methods, and a sample of the data that is being sent or received for every endpoint in the application are listed here.
 
 ### Auth Endpoints
-- POST: push a new user to the database. app.post(`/auth/register`)
-- POST: push an existing user to the database. app.post(`/auth/login`)
-- GET: this will get the user from the database to login in. app.get(`/api/user`)
-- DELETE: Can logout of the website. app.delete(`/api/logout`)
-- PUT: Can update the username or profile picture. app.put(`/api/user`)
+- POST: push a new user to the database.     app.post('/auth/register', authCtrl.register)
+- POST: push an existing user to the database.     app.post('/auth/login', authCtrl.login)
+- GET: this will get the user from the database to login in.     app.get('/auth/user', authCtrl.getUser)
+- DELETE: Can logout of the website.     app.delete('/auth/logout', authCtrl.logout)
+- PUT: Can update the username or profile picture. app.put('/auth/user', authCtrl.updateUser)
 
 ### User Plant Collection Endpoints 
-- GET: This will get all user specific plants because we are already logged in. app.get(`/api/plants`)
-- POST: will add new plant to the list of plants in the User's collection. app.post(`/api/plants`)
-- DELETE: Can delete plant from the list of plants in the User's collection. app.delete(`/api/plants/:id`)
-- PUT: Can edit plant in the list of plants. app.put(`/api/plants/:id`)
+- GET: This will get all user specific plants because we are already logged in. app.get(`/api/plants`, cardCtrl.getPlants)
+- GET: This will get all user specific plants because we are already logged in. app.get(`/api/plants/:id`, cardCtrl.getPlant)
+- POST: will add new plant to the list of plants in the User's collection. app.post(`/api/plants`, cardCtrl.addPlant)
+- DELETE: Can delete plant from the list of plants in the User's collection. app.delete(`/api/plants/:id`, cardCtrl.deletePlant)
+- PUT: Can edit plant in the list of plants. app.put(`/api/plants/:id`, cardCtrl.editPost)
 
 #### Store Endpoints
-- GET: This will get 10 random plants from the plant API. app.get(`https://trefle.io/api/plants/{id}`)
+- GET: This will get 10 random plants from the plant API. app.get(`https://trefle.io/api/plants/{id}`, storeCtrl.getPlants)
 
 #### Chart Endpoints 
-- - GET: This will get the chart? app.get(`/api/plants`)
-- POST: The line chart will update when plant biometrics are added to the database. app.post(`/api/plants`)
+- GET: This will get the chart? 
+- POST: The line chart will update when plant biometrics are added to the database. 
 
 
 ## Schema (Database Design):
@@ -133,4 +99,29 @@ URL, REST methods, and a sample of the data that is being sent or received for e
 		○ image varchar(1000) -->
     • need to update if adding shopping cart functionality
     • need to update if adding location functionality
+
+## Routes:
+        <Route exact path = '/' component = {Collection} />
+        <Route path = '/store' component = {AllPlants} />
+        <Route path = '/plant/:id' component = {Plant} />
+        <Route path = '/plant/:id/chart' component = {Chart} />
+        <Route path = '/plant/:id/edit' component = {EditPlant} />
+        <Route path = '/plant/:id/water' component = {WaterSchedule} />
+        <Route path = '/add' component = {AddPlant} />
+
+## Point Plan:
+o	3+ responsive views (10)
+
+o	React hooks on 5 components (10)
+
+o	Functioning Authentication (10)
+
+o	Hosting (15)
+
+o	Sass/Less (10)
+
+o	Node Mailer (10)
+
+o	ChartJS (5)
+
 

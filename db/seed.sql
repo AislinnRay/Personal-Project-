@@ -6,8 +6,8 @@ CREATE TABLE roles (
 CREATE TABLE users (
     user_id SERIAL PRIMARY KEY,
     email VARCHAR(255),
-    password VARCHAR(20),
-    role_id INT REFERENCES roles(roles_id)
+    password TEXT,
+    role_id INT REFERENCES roles(role_id)
 );
 
 CREATE TABLE users_info (

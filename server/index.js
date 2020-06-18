@@ -41,7 +41,7 @@ massive({
 // app.put(`/api/plants/:id`, cardCtrl.editPlant)
 
 //Auth Endpoints
-// app.post('/auth/register', authCtrl.register)
+app.post('/auth/register', authCtrl.register)
 // app.post('/auth/login', authCtrl.login)
 // app.get('/auth/user', authCtrl.getUser)
 // app.delete('/auth/logout', authCtrl.logout)

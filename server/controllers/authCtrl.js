@@ -56,9 +56,16 @@ module.exports = {
         }
     },
     getUser: ( req, res ) => {
-
+        if (req.session.user) {
+            res.status(200).send(req.session.user)
+        } else {
+            res.sendStatus(404)
+        }
     },
     logout: ( req, res ) => {
+        //do I need to do anything else to save something in the session before destroying?
+        req.session.destroy();
+        res.sendStatus(200);
 
     },
     updateUser: ( req, res ) => {

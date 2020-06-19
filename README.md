@@ -101,13 +101,14 @@ URL, REST methods, and a sample of the data that is being sent or received for e
     • need to update if adding location functionality
 
 ## Routes:
-        <Route exact path = '/' component = {Collection} />
+        <Route exact path = '/' component = {Collection} />  (Dashboard)
         <Route path = '/store' component = {AllPlants} />
         <Route path = '/plant/:id' component = {Plant} />
-        <Route path = '/plant/:id/chart' component = {Chart} />
-        <Route path = '/plant/:id/edit' component = {EditPlant} />
-        <Route path = '/plant/:id/water' component = {WaterSchedule} />
+        	<Route path = '/plant/:id/chart' component = {Chart} />
+       		<Route path = '/plant/:id/edit' component = {EditPlant} />
+        	<Route path = '/plant/:id/water' component = {WaterSchedule} />
         <Route path = '/add' component = {AddPlant} />
+		<Route path = '/register' component = {Register} />
 
 ## Point Plan:
 o	3+ responsive views (10)

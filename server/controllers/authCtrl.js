@@ -34,7 +34,6 @@ module.exports = {
         // }
 
         res.status(200).send(req.session.user)
-
     },
     login: async ( req, res ) => {
         const db = req.app.get('db')
@@ -46,9 +45,8 @@ module.exports = {
         } else {
             const authenticated = bcrypt.compareSync(password, user[0].password)
             if (authenticated) {
-                req.session.user = {
-                    userId: user[0].user_id,
-                } 
+                delete user[0].password
+                req.session.user = user[0]
                 res.status(200).send(req.session.user)
             } else {
                 res.status(403).send('Username or password incorrect')

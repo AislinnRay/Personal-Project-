@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "styleDash.scss"
+    ],
+    "names": [],
+    "file": "styleDash.css"
+}

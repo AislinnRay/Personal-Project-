@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
-import {setUser} from '../redux/reducer'
+import {setUser} from '../redux/reducer';
+import '../style/styleLand.css'
+import plantIcon from "../images/white+plant+png.png"
 
 class Landing extends Component {
     constructor(){
@@ -30,15 +32,39 @@ class Landing extends Component {
      render(){
          const { email, password } = this.state
         return(
-            <div>
-                This is the Landing component
-                <form onSubmit={(e) => this.login(e)}>
-                    <input type="text" placeholder="email" name="email" value={email} onChange={ e => this.changeHandler(e)}/>
-                    <input type='password' placeholder="password" name="password" value={password} onChange={ e => this.changeHandler(e)}/>
-                    <input type='submit' value='login'/>
-                </form>
-                <span>Don't already have an account? Register here: </span>
-                <Link to='/register'>Register</Link>
+            <div className="land-container">
+                <h1>Plantsiful</h1>
+                <div className="login-form-container">
+                    <img className="avatar"
+                    src={plantIcon} alt="source: https://www.juliakcrist.com/desktopicons"/>
+                    <form 
+                    className="login-form"
+                    onSubmit={(e) => this.login(e)}>
+                        <p className="login-text">Email</p>
+                        <input 
+                        className="login-input"
+                        type="text" 
+                        placeholder="email" 
+                        name="email" value={email} 
+                        onChange={ e => this.changeHandler(e)}/>
+                        <p className="login-text">Password</p>
+                        <input 
+                        className="login-input"
+                        type='password' 
+                        placeholder="password" 
+                        name="password" 
+                        value={password} 
+                        onChange={ e => this.changeHandler(e)}/>
+                        <input 
+                        className="login-input"
+                        type='submit' 
+                        value='login'/>
+                    </form>
+                    <div className="land-span-container">
+                    <span className="land-span">Don't already have an account? Register here: </span>
+                    <Link to='/register'>Register</Link>
+                    </div>
+                </div>
             </div>
         )
     }

@@ -1,0 +1,85 @@
+// .land-container
+// .login-form-container
+// .login-form
+// .login-input
+// .land-span-container
+// .land-span
+
+.land-container{
+    margin: 0;
+    padding: 0;
+    background: url('../images/beautiful-1866867_1920.jpg');
+    background-size: cover;
+    height: 100vh;
+    background-position: center;
+    font-family: sans-serif;
+   } 
+   .login-form-container{
+    width: 320px;
+    height: 420px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    padding: 70px 30px;
+   }
+   .avatar{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    top: -50px;
+    left: calc(50% - 50px);
+    background-image: linear-gradient(to top, #4b6913 0%, #b820b8 100%);
+    padding: 5px;
+   }
+   h1{
+    margin: 0;
+    padding: 20px 20px 20px;
+    text-align: left;
+    font-size: 22px;
+    font-family: comic;
+   }
+   .login-form-container p, .land-span{
+       margin: 0;
+    padding: 0;
+    font-weight: bold;
+   }
+   .login-form-container input{
+    width: 100%;
+    margin-bottom: 20px;
+   }
+   .login-form-container input[type="text"], input[type="password"]
+   {
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color:  #fff;
+    font-size: 16px;
+   }
+   .login-form-container input[type="submit"]
+   {
+    border: none;
+    outline: none;
+    height: 40px;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%) #989898; 
+    //background-blend-mode: multiply;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+   }
+   .login-form-container input[type="submit"]:hover
+   {
+    cursor: pointer;
+    background-image: linear-gradient(to right, #f83600 0%, #f9d423 100%);
+   }
+   .login-form-container a{
+    text-decoration: none;
+    font-size: 14px;
+    color: #fff;
+   }

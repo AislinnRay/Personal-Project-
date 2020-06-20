@@ -3,8 +3,8 @@ const bcrypt = require('bcrypt');
 module.exports = {
     register: async ( req, res ) => {
         const db = req.app.get('db')
-        const {email, password, first_name, last_name, profile_pic} = req.body;
-        //when destructuring spelling matters
+        // const {email, password, first_name, last_name, profile_pic} = req.body; when destructuring spelling matters
+        const {email, password, firstName, lastName, profilePic} = req.body;
 
         const existingUser = await db.check_user(email)
 
@@ -17,7 +17,9 @@ module.exports = {
 
         const newUser = await db.register_user([email, hash])
 
-        const newUserInfo = await db.register_user_info([first_name, last_name, profile_pic, newUser[0].user_id]) // this is where name can change but the order matters
+        //const newUserInfo = await db.register_user_info([first_name, last_name, profile_pic, newUser[0].user_id])
+        const newUserInfo = await db.register_user_info([firstName, lastName, profilePic, newUser[0].user_id])
+        // this is where name can change but the order matters
 
         const newUserObj = {...newUser[0], ...newUserInfo[0]}
 
@@ -68,15 +70,13 @@ module.exports = {
     },
     updateUser: async ( req, res ) => {
         const db = req.app.get('db')
-        const {email, password, first_name, last_name, profile_pic} = req.body;
+        const {email, password, firstName, lastName, profilePic} = req.body;
 
         const salt = bcrypt.genSaltSync(10)
         const hash = bcrypt.hashSync(password, salt)
 
         const updateUser = await db.update_user([email, hash])
-
-        const updateUserInfo = await db.update_user_info([first_name, last_name, profile_pic, updateUser[0].user_id]) 
-
+        const updateUserInfo = await db.register_user_info([firstName, lastName, profilePic, updateUser[0].user_id])
         const updateUserObj = {...updateUser[0], ...updateUserInfo[0]}
 
         delete updateUserObj.password

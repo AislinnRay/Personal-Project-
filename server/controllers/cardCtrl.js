@@ -7,8 +7,8 @@ module.exports = {
     },
     getPlant: ( req, res ) => {
         const db = req.app.get('db')
-        const { plant_id } = req.params
-        db.get_plant(plant_id)
+        const { plantId } = req.params
+        db.get_plant(plantId)
         .then((result) => res.status(200).send(result[0]))
         .catch((err) => res.status(500).send(err))
     },

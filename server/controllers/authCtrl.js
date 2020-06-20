@@ -41,14 +41,19 @@ module.exports = {
         const db = req.app.get('db')
         const { email, password } = req.body
 
+
         const user = await db.check_user(email)
         if ( !user[0]){
             return res.status(404).send('User does not exist')
         } else {
+            const userInfoTable = await db.check_user_info([user[0].user_id])
+            console.log(user.user_id, "5")
+            console.log(userInfoTable, "4")
+            const tableObj = {...user[0], ...userInfoTable[0]}
+            delete tableObj.password
             const authenticated = bcrypt.compareSync(password, user[0].password)
             if (authenticated) {
-                delete user[0].password
-                req.session.user = user[0]
+                req.session.user = tableObj
                 res.status(200).send(req.session.user)
             } else {
                 res.status(403).send('Username or password incorrect')
@@ -71,16 +76,26 @@ module.exports = {
     updateUser: async ( req, res ) => {
         const db = req.app.get('db')
         const {email, password, firstName, lastName, profilePic} = req.body;
-
+        console.log(req.session.user, "1")
+        //console.log(req.session, "2")
+        const {user_id} = req.session.user 
+        const user = await db.check_user(email)
+        if (password) {
         const salt = bcrypt.genSaltSync(10)
         const hash = bcrypt.hashSync(password, salt)
-
-        const updateUser = await db.update_user([email, hash])
-        const updateUserInfo = await db.register_user_info([firstName, lastName, profilePic, updateUser[0].user_id])
+        const updateUser = await db.update_user([user_id, email, hash])
+        const updateUserInfo = await db.update_user_info([updateUser[0].user_id, firstName, lastName, profilePic])
         const updateUserObj = {...updateUser[0], ...updateUserInfo[0]}
-
         delete updateUserObj.password
-
         req.session.user = updateUserObj
+        res.status(200).send(req.session.user)
+        } else {
+            const updateUser = await db.update_user([user_id, email, user[0].password])
+            const updateUserInfo = await db.update_user_info([user_id, firstName, lastName, profilePic])
+            const updateUserObj = {...updateUser[0], ...updateUserInfo[0]}
+            delete updateUserObj.password
+            req.session.user = updateUserObj
+            res.status(200).send(req.session.user)
+        }
     }
 }

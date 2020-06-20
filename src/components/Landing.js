@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
+import {connect} from 'react-redux';
+import {setUser} from '../redux/reducer'
 
-export default class Landing extends Component {
+class Landing extends Component {
     constructor(){
         super();
         this.state = {
@@ -19,7 +21,10 @@ export default class Landing extends Component {
         e.preventDefault();
         const { email, password } = this.state
         await axios.post('/auth/login', {email, password})
-        .then( res => {this.props.history.push('/dash')})
+        .then( res => {
+            this.props.setUser(res.data)
+            console.log(res.data, "3")
+            this.props.history.push('/dash')})
         .catch(err => {alert('Could not log in')})
     }
      render(){
@@ -38,3 +43,5 @@ export default class Landing extends Component {
         )
     }
 }
+//const mapStateToProps = reduxState => reduxState
+export default connect(null, {setUser})(Landing)

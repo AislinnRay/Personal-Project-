@@ -25,8 +25,12 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
+import {connect} from 'react-redux';
+import {setUser} from '../redux/reducer';
+import '../style/styleLand.css'
+import plantIcon from "../images/black+plant+png.png"
 
-export default class Register extends Component {
+class Register extends Component {
     constructor(){
         super();
         this.state = {
@@ -46,25 +50,63 @@ export default class Register extends Component {
         e.preventDefault();
         const { email, password, firstName, lastName} = this.state
         await axios.post('/auth/register', {email, password, firstName, lastName})
-        .then( res => {this.props.history.push('/dash')})
+        .then( res => {
+            this.props.setUser(res.data)
+            this.props.history.push('/dash')})
         .catch(err => {alert('Could not register')})
     }
      render(){
          const { email, password, firstName, lastName } = this.state
         return(
-            <div>
-                This is the Register component
-                <form onSubmit={(e) => this.register(e)}>
-                    <input type="text" placeholder="First Name" name="firstName" value={firstName} onChange={ e => this.changeHandler(e)}/>
-                    <input type="text" placeholder="Last Name" name="lastName" value={lastName} onChange={ e => this.changeHandler(e)}/>
+            <div className="land-container">
+                <h1>Plantsiful</h1>
+                <div className="login-form-container" id="register-form-container">
+                    <img className="avatar"
+                    src={plantIcon} alt="source: https://www.juliakcrist.com/desktopicons"/>
+                <form 
+                className="login-form"
+                onSubmit={(e) => this.register(e)}>
+                    <p className="login-text">First Name</p>
+                    <input 
+                    className="login-input"
+                    type="text" 
+                    placeholder="First Name" name="firstName" 
+                    value={firstName} 
+                    onChange={ e => this.changeHandler(e)}/>
+                    <p className="login-text">Last Name</p>
+                    <input 
+                    className="login-input"
+                    type="text" 
+                    placeholder="Last Name" name="lastName" 
+                    value={lastName} 
+                    onChange={ e => this.changeHandler(e)}/>
                     {/* <input type="text" placeholder="Profile Picture" name="profilePic" value={profilePic} onChange={ e => this.changeHandler(e)}/> */}
-                    <input type="text" placeholder="email" name="email" value={email} onChange={ e => this.changeHandler(e)}/>
-                    <input type='password' placeholder="password" name="password" value={password} onChange={ e => this.changeHandler(e)}/>
-                    <input type='submit' value='register'/>
+                    <p className="login-text">Email</p>
+                    <input 
+                    className="login-input"
+                    type="text" 
+                    placeholder="email" 
+                    name="email" 
+                    value={email} 
+                    onChange={ e => this.changeHandler(e)}/>
+                    <p className="login-text">Password</p>
+                    <input 
+                    className="login-input"
+                    type='password' placeholder="password" name="password" 
+                    value={password} 
+                    onChange={ e => this.changeHandler(e)}/>
+                    <input 
+                    className="login-input"
+                    type='submit' 
+                    value='register'/>
                 </form>
-                <span>Already have an account? Login here: </span>
-                <Link to='/'>Login</Link>
+                <div className="land-span-container">
+                    <p className="land-span">Already have an account?</p>
+                    <Link to='/'>Login Here</Link>
+                </div>
+                </div>
             </div>
         )
     }
 }
+export default connect(null, {setUser})(Register)

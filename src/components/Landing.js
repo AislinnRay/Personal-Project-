@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {setUser} from '../redux/reducer';
 import '../style/styleLand.css'
-import plantIcon from "../images/white+plant+png.png"
+import plantIcon from "../images/black+plant+png.png"
 
 class Landing extends Component {
     constructor(){
@@ -61,8 +61,8 @@ class Landing extends Component {
                         value='login'/>
                     </form>
                     <div className="land-span-container">
-                    <span className="land-span">Don't already have an account? Register here: </span>
-                    <Link to='/register'>Register</Link>
+                    <p className="land-span">Don't have an account?</p>
+                    <Link to='/register'>Register here</Link>
                     </div>
                 </div>
             </div>

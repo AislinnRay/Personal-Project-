@@ -1,13 +1,13 @@
 import React from 'react';
 import './App.css';
 import routes from './routes';
-// import Nav from './components/unused/Nav';
+import Nav from './components/Nav';
 
 function App() {
   return (
     <div className="App">
       {routes}
-      {/* <Nav /> */}
+      <Nav />
     </div>
   );
 }

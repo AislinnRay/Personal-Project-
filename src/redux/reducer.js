@@ -12,7 +12,7 @@ const initialState = {
   }
 
   // const LOGIN_USER = 'LOGIN_USER'
-  // const LOGOUT_USER = 'LOGOUT_USER'
+  const LOGOUT_USER = 'LOGOUT_USER'
   // const GET_USER = 'GET_USER'
   // const FULFILLED = "_FULFILLED"
   const SET_USER = 'SET_USER'
@@ -24,11 +24,11 @@ const initialState = {
 //     }
 // }
 
-// export function logoutUser(user){
-//     return {
-//         type: LOGOUT_USER, payload: user
-//     }
-// }
+export function logoutUser(user){
+    return {
+        type: LOGOUT_USER, payload: user
+    }
+}
 
 // export function getUser(){
 //     const user = axios.get('/auth/user')
@@ -47,8 +47,8 @@ export function setUser(payload){
     switch (action.type) {
       // case LOGIN_USER:
       //   return { ...state, user: action.payload };
-      // case LOGOUT_USER:
-      //   return initialState;
+      case LOGOUT_USER:
+        return initialState;
       // case GET_USER + '_PENDING':
       //     return state
       // case GET_USER + FULFILLED:

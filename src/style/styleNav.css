@@ -1,0 +1,72 @@
+.Nav {
+  width: 100px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding-top: 20px;
+  color: white;
+  background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+  -webkit-box-shadow: 5px 0 10px 0 rgba(0, 0, 0, 0.1), 5px 0 5px rgba(0, 0, 0, 0.2);
+          box-shadow: 5px 0 10px 0 rgba(0, 0, 0, 0.1), 5px 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.Nav > div {
+  margin: 0 0 45px;
+}
+
+.nav-profile-container {
+  height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.nav-profile-pic {
+  width: 70px;
+  height: 70px;
+  background-color: white;
+  background-position: center;
+  background-size: cover;
+  border-radius: 50%;
+  -webkit-box-shadow: 0 0 20px  #e2c3df;
+          box-shadow: 0 0 20px  #e2c3df;
+}
+
+.nav-links {
+  height: 120px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.nav-img {
+  width: 40px;
+}
+
+.logout {
+  position: absolute;
+  bottom: 20px;
+  left: 30px;
+}
+/*# sourceMappingURL=styleNav.css.map */

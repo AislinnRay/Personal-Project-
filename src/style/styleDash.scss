@@ -8,12 +8,11 @@ background: url('../images/white-painted-concrete-wall-888895_1920.jpg')
   
 #Dash {
     width: 100%;
-    display: -ms-flexbox;
     display: flex;
-    -ms-flex-direction: row;
-        flex-direction: row;
-    -ms-flex-align: center;
-        align-items: center;
+    flex-direction: column;
+    align-items: space-around;
+    flex-wrap: wrap;
+    margin-left:100px;
   }
   #Dash > * {
     margin: 10px 0;

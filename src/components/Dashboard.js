@@ -12,11 +12,6 @@ class Dashboard extends Component {
         }
     }
 
-    // async componentDidMount() {
-    //     const {common_name} = await axios.get('api/plants')
-    //     this.setState({ plants: common_name })
-    // }
-
     componentDidMount() {
         console.log(this.props.reduxState)
         console.log(this.props)
@@ -42,8 +37,6 @@ class Dashboard extends Component {
                     setPlant={this.setPlant}
                     plant={plant} />
                 })}
-            <div>this is the Dashboard Component</div>
-            <p>This is a p tag</p>
             </div>
         )
     }

@@ -4,24 +4,23 @@
 // .login-input
 // .land-span-container
 // .land-span
+@import "./variables";
+@import "./mixins";
 
-.land-container{
-    margin: 0;
-    padding: 0;
-    background: url('../images/beautiful-1866867_1920.jpg');
-    background-size: cover;
-    height: 100vh;
-    background-position: center;
-    font-family: sans-serif;
-   } 
+.whitespace{
+    width: 100%;
+    height: 600px;
+    background: $dark-green;
+}
+
+   .land-container{
+       @include flexCenter(row, url('../images/beautiful-1866867_1920.jpg'));
+   }
    .login-form-container{
     width: 320px;
     height: 420px;
-    background: rgba(0, 0, 0, 0.5);
-    color: #fff;
-    top: 50%;
-    left: 50%;
-    position: absolute;
+    background: $black;
+    color:$white;
     transform: translate(-50%,-50%);
     box-sizing: border-box;
     padding: 70px 30px;
@@ -45,6 +44,8 @@
     text-align: left;
     font-size: 42px;
     font-family: 'Oleo Script Swash Caps', cursive;
+    display: inline;
+    left: -400px;
    }
    .login-form-container p, .land-span{
        margin: 0;
@@ -71,7 +72,6 @@
     outline: none;
     height: 40px;
     background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%) #989898; 
-    //background-blend-mode: multiply;
     color: #fff;
     font-size: 18px;
     border-radius: 20px;

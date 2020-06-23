@@ -21,19 +21,19 @@ Plants are organized by when they need to be watered which includes care instruc
 - Virtual house map with interactive location of each plant.
 
 ## App Colors:
-<img src = "./images/Purple Orchid color pallette.png">
+<img src = "./src/images/Purple Orchid color pallette.png">
 
 
 ## View/ Controller:
 ### Wireframe:
-<img src = "./images/Wireframe.png">
+<img src = "./src/images/Wireframe.png">
 
 ### Component Tree:
-<img src = "./images/Component-Tree.png">
+<img src = "./src/images/Component-Tree.png">
 
 ### SignIn.js (View) 
 - This is the Sign in page where the user will be able to Sign into their already existing account. It will handle authentication. Below is a route to the register page if the user needs to register. 
-<img src = "./images/SignIn and Register.png"> 
+<img src = "./src/images/SignIn and Register.png"> 
 
 ### Register.js (View)
 - This is the Register page where the user will be able to register a new account and then be redirected back to the login component. This component will have similar functionality as SignIn.

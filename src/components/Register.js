@@ -59,7 +59,7 @@ class Register extends Component {
          const { email, password, firstName, lastName } = this.state
         return(
             <div className="land-container">
-                <h1>Plantsiful</h1>
+                {/* <h1>Plantsiful</h1> */}
                 <div className="login-form-container" id="register-form-container">
                     <img className="avatar"
                     src={plantIcon} alt="source: https://www.juliakcrist.com/desktopicons"/>

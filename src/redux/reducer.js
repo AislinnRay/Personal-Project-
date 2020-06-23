@@ -8,7 +8,8 @@ const initialState = {
     lastName: '',
     profilePic: '',
     user_id: 0
-  }
+  },
+  isLoggedIn: false
   }
 
   // const LOGIN_USER = 'LOGIN_USER'
@@ -38,6 +39,7 @@ export function logoutUser(user){
 // }
 
 export function setUser(payload){
+  console.log(payload)
     return {
         type: SET_USER, payload: payload
     }
@@ -56,7 +58,7 @@ export function setUser(payload){
       // case GET_USER + '_REJECTED':
       //     return initialState
     case SET_USER:
-        return {...state, user: action.payload}  
+        return {...state, user: action.payload, isLoggedIn: true}  
       default:
         return initialState;
     }

@@ -1,14 +1,15 @@
 module.exports = {
     getPlants: ( req, res ) => {
         const db = req.app.get('db')
-        db.get_plants()
+        //const { user_id } = req.session.user
+        db.get_plants(1)
         .then((results) => res.status(200).send(results))
         .catch((err) => res.status(500).send(err))
     },
     getPlant: ( req, res ) => {
         const db = req.app.get('db')
-        const { plantId } = req.params
-        db.get_plant(plantId)
+        const { plant_id } = req.params
+        db.get_plant(plant_id)
         .then((result) => res.status(200).send(result[0]))
         .catch((err) => res.status(500).send(err))
     },

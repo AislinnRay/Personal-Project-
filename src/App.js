@@ -2,14 +2,18 @@ import React from 'react';
 import './App.css';
 import routes from './routes';
 import Nav from './components/Nav';
+import Header from './components/Header';
+import AuthHeader  from './components/AuthHeader';
+import {connect} from 'react-redux';
 
-function App() {
+function App(props) {
   return (
     <div className="App">
+      {props.isLoggedIn ? <Header/> : <AuthHeader/>}
       {routes}
       <Nav />
     </div>
   );
 }
-
-export default App;
+const mapStateToProps = reduxState => reduxState
+export default connect(mapStateToProps)(App);

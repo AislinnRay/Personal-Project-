@@ -25,15 +25,16 @@ class Landing extends Component {
         await axios.post('/auth/login', {email, password})
         .then( res => {
             this.props.setUser(res.data)
-            console.log(res.data, "3")
+            //console.log(res.data, "3")
             this.props.history.push('/dash')})
         .catch(err => {alert('Could not log in')})
     }
      render(){
          const { email, password } = this.state
         return(
+            <div className="outer-land-container">
             <div className="land-container">
-                <h1>Plantsiful</h1>
+                {/* <h1>Plantsiful</h1> */}
                 <div className="login-form-container">
                     <img className="avatar"
                     src={plantIcon} alt="source: https://www.juliakcrist.com/desktopicons"/>
@@ -65,6 +66,8 @@ class Landing extends Component {
                     <Link to='/register'>Register here</Link>
                     </div>
                 </div>
+            </div>
+            <div className="whitespace">I am white space</div>
             </div>
         )
     }

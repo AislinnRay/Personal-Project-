@@ -1,0 +1,20 @@
+@import "./styleLand";
+
+.dash-container{
+@extend .land-container;
+background: url('../images/white-painted-concrete-wall-888895_1920.jpg')
+}
+
+  
+#Dash {
+    width: 100%;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: row;
+        flex-direction: row;
+    -ms-flex-align: center;
+        align-items: center;
+  }
+  #Dash > * {
+    margin: 10px 0;
+  }

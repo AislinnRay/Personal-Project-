@@ -43,7 +43,9 @@ CREATE TABLE plants_shop (
 
 alter table users_plants
 alter column plant_img type VARCHAR(1000);
-    
+
+
+--Add plants   
 INSERT INTO users_plants (
     common_name,
     scientific_name,
@@ -96,4 +98,8 @@ VALUES
     , 1
     )
 returning *;
+
+--nodemailer deleting email
+delete from users_info where name = 'ace';
+delete from users where email = 'aislinn.ray.m@gmail.com'
 

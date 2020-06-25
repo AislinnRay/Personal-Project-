@@ -1,4 +1,4 @@
-SELECT * FROM users_plants WHERE user_id = $1;
+SELECT * FROM users_plants WHERE plant_id = $1;
 
 
 -- select p.post_id, p.title, p.img, p.content, u.username, u.profile_pic

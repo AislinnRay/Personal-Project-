@@ -19,7 +19,7 @@ function Plant({plant, history, setPlant}){
             <div className="plant_note">{plant.note}</div>
             <a className="buttons">
             <button className="plant_button"
-            onClick ={() => history.push(`/form/${plant.plant_id}`)}
+            onClick ={() => history.push(`/edit/${plant.plant_id}`)}
             >Edit</button>
             <button className="plant_button" onClick={deleteItem}>Delete</button>
             </a>

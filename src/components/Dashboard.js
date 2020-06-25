@@ -13,8 +13,6 @@ class Dashboard extends Component {
     }
 
     componentDidMount() {
-        console.log(this.props.reduxState)
-        console.log(this.props)
         if (this.props.user 
             && this.props.user.user_id)
             {this.setPlant()}

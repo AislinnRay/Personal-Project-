@@ -25,7 +25,7 @@ function Nav(props){
                   <img className='nav-img' 
                   src={homeIcon} alt='home' />
                 </Link>
-              <Link to='/new'>
+              <Link to='/add'>
                   <img className='nav-img' 
                   src={addIcon} alt='new post' />
                 </Link>

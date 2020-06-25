@@ -2,6 +2,8 @@ require('dotenv').config();
 const express = require('express');
 const session = require('express-session');
 const massive = require('massive');
+const heartbeats = require("heartbeats")
+const smsUtil = require("./utils/smsUtil")
 const {SERVER_PORT, CONNECTION_STRING, SESSION_SECRET} = process.env;
 const app = express();
 
@@ -29,6 +31,10 @@ massive({
         app.set("db", db)
         console.log("Database connected")
         app.listen(SERVER_PORT, () => console.log(`Server listening on ${SERVER_PORT}`))
+        //SMS
+        const heart = heartbeats.createHeart(1000 * 60)
+        heart.createEvent(1, (count, last) => smsUtil.sendText( count, last, db ))
+        //SMS
     })
     .catch((err) => console.log(err))
 

@@ -1,5 +1,5 @@
 const bcrypt = require('bcrypt');
-const {sendEmail} = require('./emailCtrl')
+const {sendEmail} = require('../utils/emailUtil')
 
 module.exports = {
     register: async ( req, res ) => {
@@ -70,10 +70,11 @@ module.exports = {
     updateUser: async ( req, res ) => {
         const db = req.app.get('db')
         const {email, password, firstName, lastName, profilePic} = req.body;
-        console.log(req.session.user, "1")
+        //console.log(req.session.user, "1")
         //console.log(req.session, "2")
         const {user_id} = req.session.user 
         const user = await db.check_user(email)
+        
         if (password) {
         const salt = bcrypt.genSaltSync(10)
         const hash = bcrypt.hashSync(password, salt)
@@ -82,11 +83,16 @@ module.exports = {
         const updateUserObj = {...updateUser[0], ...updateUserInfo[0]}
         delete updateUserObj.password
         req.session.user = updateUserObj
-        res.status(200).send(req.session.user)
+        res.status(200).send(req.session.user) 
         } else {
+            console.log(user_id, "test")
+            console.log(user, "user")
             const updateUser = await db.update_user([user_id, email, user[0].password])
+            console.log(updateUser)
             const updateUserInfo = await db.update_user_info([user_id, firstName, lastName, profilePic])
+            console.log(updateUserInfo)
             const updateUserObj = {...updateUser[0], ...updateUserInfo[0]}
+            console.log(updateUserObj)
             delete updateUserObj.password
             req.session.user = updateUserObj
             res.status(200).send(req.session.user)

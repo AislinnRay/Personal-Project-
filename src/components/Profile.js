@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
-import {connect } from 'react-redux';
-import {setUser} from '../redux/reducer'
+import { connect } from 'react-redux';
+import { setUser, logoutUser } from '../redux/reducers/authReducer';
 
 class Profile extends Component {
     constructor(){
@@ -39,16 +39,18 @@ class Profile extends Component {
         })
         .catch(err => {alert('Could not update user information')})
     }
-    logout = () => {
-        axios.delete('/auth/logout')
-        .then( () => { this.props.history.push('/')})
-    }
+    // logout = () => {
+    //     axios.delete('/auth/logout')
+    //     .then( () => { this.props.history.push('/')})
+    // }
      render(){
          const { email, password, firstName, lastName, profilePic } = this.state
         return(
             <div>
                 This is the Profile component
-                <button onClick={() => this.logout()}>Logout</button>
+                <Link to='/' onClick={this.props.logoutUser}>
+                Log Out
+                </Link>
                 <form onSubmit={(e) => this.update(e)}>
                     <input type="text" placeholder="First Name" name="firstName" value={firstName} onChange={ e => this.changeHandler(e)}/>
                     <input type="text" placeholder="Last Name" name="lastName" value={lastName} onChange={ e => this.changeHandler(e)}/>
@@ -63,5 +65,6 @@ class Profile extends Component {
         )
     }
 }
+
 const mapStateToProps = reduxState => reduxState
 export default connect(mapStateToProps, {setUser})(Profile)

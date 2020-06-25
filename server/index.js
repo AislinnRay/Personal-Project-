@@ -31,10 +31,10 @@ massive({
         app.set("db", db)
         console.log("Database connected")
         app.listen(SERVER_PORT, () => console.log(`Server listening on ${SERVER_PORT}`))
-        //SMS
-        const heart = heartbeats.createHeart(1000 * 60)
-        heart.createEvent(1, (count, last) => smsUtil.sendText( count, last, db ))
-        //SMS
+        // //SMS
+        // const heart = heartbeats.createHeart(1000 * 5)
+        // heart.createEvent(1, (count, last) => smsUtil.sendText( count, last, db ))
+        // //SMS
     })
     .catch((err) => console.log(err))
 

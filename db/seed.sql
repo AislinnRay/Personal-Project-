@@ -7,6 +7,7 @@ CREATE TABLE users (
     user_id SERIAL PRIMARY KEY,
     email VARCHAR(255),
     password TEXT,
+    phone VARCHAR(10),
     role_id INT REFERENCES roles(role_id)
 );
 
@@ -23,26 +24,26 @@ CREATE TABLE users_plants (
     common_name VARCHAR(45),
     scientific_name VARCHAR(200),
     note TEXT,
-    plant_img VARCHAR(200),
+    plant_img VARCHAR(1000),
     water_interval INT,
     created_at TIMESTAMPTZ(2) DEFAULT now(),
     user_id INT REFERENCES users(user_id)
 );
 
-CREATE TABLE plants_shop (
-    plant_shop_id SERIAL PRIMARY KEY,
-    common_name VARCHAR(45),
-    scientific_name VARCHAR(200),
-    note TEXT,
-    plant_img TEXT
-);
+-- CREATE TABLE plants_shop (
+--     plant_shop_id SERIAL PRIMARY KEY,
+--     common_name VARCHAR(45),
+--     scientific_name VARCHAR(200),
+--     note TEXT,
+--     plant_img TEXT
+-- );
 
 
     • need to update if adding shopping cart functionality
     • need to update if adding location functionality
 
-alter table users_plants
-alter column plant_img type VARCHAR(1000);
+-- alter table users_plants
+-- alter column plant_img type VARCHAR(1000);
 
 
 --Add plants   
@@ -100,6 +101,13 @@ VALUES
 returning *;
 
 --nodemailer deleting email
-delete from users_info where name = 'ace';
-delete from users where email = 'aislinn.ray.m@gmail.com'
+delete from users_info where first_name = 'Ais';
+delete from users_plants where plant_id = 
+delete from users where email = 'aislinn.ray.m@gmail.com';
+
+drop table users_info;
+drop table users_plants;
+drop table users;
+
+
 

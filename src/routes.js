@@ -5,8 +5,6 @@ import Landing from './components/Landing';
 import Register from './components/Register';
 import Profile from './components/Profile';
 import AddPlant from './components/AddPlant';
-import EditPlant from './components/unused/EditPlant';
-
 
 export default (
     <Switch>
@@ -16,8 +14,7 @@ export default (
 		<Route path='/register' component={Register} />
         <Route path = '/add' component = {AddPlant} />
        	<Route path = '/edit/:plant_id' component = {AddPlant} />
-        	{/* <Route path = '/plant/:id/water' component = {WaterSchedule} />
-            <Route path = '/plant/:id' component = {Plant} />
-            <Route path = '/plant/:id/chart' component = {Chart} /> */}
+        	{/* <Route path = '/plant/:id/water' component = {WaterLog} /> */}
+            
     </Switch>
 )

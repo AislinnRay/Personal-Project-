@@ -1,19 +1,20 @@
 // HEARTBEAT
-const heartbeats = require("heartbeats")
-const heart = heartbeats.createHeart(1000 * 10)
+// const heartbeats = require("heartbeats")
+// const heart = heartbeats.createHeart(1000 * 60 * 60)
 
 // heart.createEvent(1, async (count, last) => {
-//     const peopleThatMatch = await db.auth.get_phone_numbers()
-//     console.log(peopleThatMatch)
+//     //const peopleThatMatch = await db.get_phone_numbers()
+//     //console.log(peopleThatMatch)
 //     console.log(count)
 // })
 
 
 //   This is the action. 
-  module.exports = {
-    sendText: async (count, last, db) => {
-        // const peopleThatMatch = await db.get_phone_numbers()
-        // console.log(peopleThatMatch)
+//   module.exports = {
+//     sendText: async (count, last, db) => {
+//             console.log('Hello')
+        //const peopleThatMatch = await db.get_phone_numbers()
+        //console.log(peopleThatMatch)
         // peopleThatMatch.forEach((element) => {
 //     twilio.messages
 //       .create({
@@ -27,6 +28,6 @@ const heart = heartbeats.createHeart(1000 * 10)
 //       })
 //       .catch((err) => console.log(err))
 //   })
-        console.log(count)
-    }
-    }
+    //     console.log(count)
+//     }
+//     }

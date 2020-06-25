@@ -17,6 +17,7 @@ function Plant({plant, history, setPlant}){
             <div className="plant_title">{plant.common_name}</div>
             <div className="plant_title">{plant.scientific_name}</div>
             <div className="plant_note">{plant.note}</div>
+            <div className="plant_note">{plant.countdown}</div>
             <a className="buttons">
             <button className="plant_button"
             onClick ={() => history.push(`/edit/${plant.plant_id}`)}

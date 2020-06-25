@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import { withRouter, Link } from 'react-router-dom';
-import { logoutUser } from '../redux/reducer';
+import { logoutUser } from '../redux/reducers/authReducer';
 import homeIcon from '../images/home_icon.png';
 import logoutIcon from '../images/logout_icon.png';
 import addIcon from '../images/add_icon.png';

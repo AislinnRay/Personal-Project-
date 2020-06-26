@@ -12,19 +12,19 @@ function Plant({plant, history, setPlant}){
     }
     return (
         <div className="Plant">
-            <img className="plant_img" src={plant.plant_img}/>
-            <a>
+            <img className="plant_img" src={plant.plant_img} alt='plant'/>
+            <div>
             <div className="plant_title">{plant.common_name}</div>
             <div className="plant_title">{plant.scientific_name}</div>
             <div className="plant_note">{plant.note}</div>
             <div className="plant_note">{plant.countdown}</div>
-            <a className="buttons">
+            <div className="buttons">
             <button className="plant_button"
             onClick ={() => history.push(`/edit/${plant.plant_id}`)}
             >Edit</button>
             <button className="plant_button" onClick={deleteItem}>Delete</button>
-            </a>
-            </a>
+            </div>
+            </div>
         </div>
     )
 }

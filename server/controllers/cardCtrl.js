@@ -4,6 +4,7 @@ module.exports = {
     getPlants: ( req, res ) => {
         const db = req.app.get('db')
         const { user_id } = req.session.user
+        console.log(user_id)
         db.get_plants(user_id)
         .then((result) => res.status(200).send(result))
         .catch((err) => res.status(500).send(err))

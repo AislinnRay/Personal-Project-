@@ -26,6 +26,7 @@ CREATE TABLE users_plants (
     note TEXT,
     plant_img VARCHAR(1000),
     water_interval INT,
+    room VARCHAR(45),
     created_at TIMESTAMPTZ(2) DEFAULT now(),
     user_id INT REFERENCES users(user_id)
 );
@@ -53,6 +54,7 @@ INSERT INTO users_plants (
     note,
     plant_img,
     water_interval,
+    room,
     user_id
     )
 VALUES 
@@ -61,6 +63,7 @@ VALUES
     , 'Water once a week. Likes bright light for more growth.'
     , 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRbhiKX2t5BJIMCc6vLaa0GtFulk52hVQh7Rw&usqp=CAU'
     , 7
+    , 'Living Room'
     , 1
     ),
     ('Snake Plant'
@@ -68,13 +71,15 @@ VALUES
     , 'Water once every two weeks. Needs to be repotted soon'
     , 'https://secure.img1-fg.wfcdn.com/im/33278590/compr-r85/8064/80643595/romam-snake-plant-in-planter.jpg'
     , 14
+    , 'Living Room'
     , 1
     ),
-    ('Snpider Plant'
+    ('Spider Plant'
     , 'Chlorophytum comosum'
     , 'Water once every two weeks.'
     , 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQqHdHjbYPPzAoPvuFPyi3wIdTgJGF75CKVZQ&usqp=CAU'
     , 14
+    , 'Den'
     , 1
     ),
     ('Christmas Cactus'
@@ -82,6 +87,7 @@ VALUES
     , 'Water once a week.'
     , 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSG4IdYG_6EClofvi24CmpMY8SPSXKwFExsXQ&usqp=CAU'
     , 7
+    , 'Bathroom'
     , 1
     ),
     ('Umbrella Tree'
@@ -89,6 +95,39 @@ VALUES
     , 'Water once a week.'
     , 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTsEtro32VyRC3oFvxiE53Q5TjTCm9CMLU64Q&usqp=CAU'
     , 7
+    , 'Dining Room'
+    , 1
+    ),
+    ('Hens and Chicks'
+    , 'Sempervivum tectorum'
+    , 'Water once a week.'
+    , 'https://cdn.pixabay.com/photo/2017/08/25/01/24/cacti-2678917__480.jpg'
+    , 7
+    , 'Kitchen'
+    , 1
+    ),
+    ('Mosaic Plant'
+    , 'Fittonia argyroneura'
+    , 'Water once a week.'
+    , 'https://cdn.pixabay.com/photo/2017/11/06/23/25/fittonia-2925192__480.jpg'
+    , 7
+    , 'Bathroom'
+    , 1
+    ),
+      ('Tiger Tooth Aloe'
+    , 'Aloe juvenna'
+    , 'Water once a week.'
+    , 'https://cdn.pixabay.com/photo/2018/01/05/12/22/leaf-3062792__480.jpg'
+    , 7
+    , 'Kitchen'
+    , 1
+    ),
+      ('Pink Passion Dracaena'
+    , 'Dracaena marginata'
+    , 'Water once a week.'
+    , 'https://cdn.pixabay.com/photo/2015/05/31/10/56/plant-791052__480.jpg'
+    , 7
+    , 'Kitchen'
     , 1
     ),
     ('Staghorn Fern'
@@ -96,6 +135,7 @@ VALUES
     , 'Soak thoroughly once a week.'
     , 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTOL2J6m5uBYCgbtIvxO-ZbRquX1YaQkrnVtg&usqp=CAU'
     , 7
+    , 'Bathroom'
     , 1
     )
 returning *;

@@ -8,7 +8,7 @@ import addIcon from '../images/add_icon.png';
 import '../style/styleNav.css'
 
 function Nav(props){
-    if (props.location.pathname == '/' || props.location.pathname == '/register'){
+    if (props.location.pathname === '/' || props.location.pathname === '/register'){
         return null
     } 
     else {

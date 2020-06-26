@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import "../style/styleAddPlant.css";
 import { connect } from "react-redux";
-import Chart from './Chart'
+import Chart from './Chart';
 
 class AddPlant extends Component {
   constructor(props) {
@@ -14,11 +14,8 @@ class AddPlant extends Component {
       note: "",
       plant_img: "",
       water_interval: 10,
-      //last_watered: timestamp,
     };
   }
-
-  // const timestamp = Date.now();
 
   componentDidMount() {
     console.log(this.props);
@@ -123,7 +120,8 @@ class AddPlant extends Component {
           <img
             className="form_img_preview"
             src={plant_img}
-            //{`https://cdn.pixabay.com/photo/2019/02/08/21/53/plant-3984065_1280.jpg`}
+            //{`https://cdn.pixabay.com/photo/2019/02/08/21/53/plant-3984065_1280.jpg`} 
+            alt='potted plant'
           />
           <p>Image URL:</p>
           <input
@@ -178,5 +176,5 @@ class AddPlant extends Component {
   }
 }
 
-const mapStateToProps = (reduxState) => reduxState;
+const mapStateToProps = (reduxState) => reduxState.plantReducer
 export default connect(mapStateToProps)(AddPlant);

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import {connect} from 'react-redux';
 import { Pie } from "react-chartjs-2";
 
 class Chart extends Component {
@@ -22,4 +23,5 @@ class Chart extends Component {
   }
 }
 
-export default Chart;
+const mapStateToProps = reduxState => reduxState;
+export default connect(mapStateToProps)(Chart);

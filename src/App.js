@@ -7,9 +7,10 @@ import AuthHeader  from './components/AuthHeader';
 import {connect} from 'react-redux';
 
 function App(props) {
+  console.log(props)
   return (
     <div className="App">
-      {props.isLoggedIn ? <Header/> : <AuthHeader/>}
+      {props.authReducer.isLoggedIn ? <Header/> : <AuthHeader/>}
       {routes}
       <Nav />
     </div>

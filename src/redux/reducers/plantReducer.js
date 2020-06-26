@@ -1,27 +1,20 @@
 const initialState = {
-    plant: {
-      common_name: '',
-      scientific_name: '',
-      note: '',
-      water_interval: '',
-      category: '',
-      plant_id: 0
-    }
+      plants: []
     }
   
-    const SET_PLANT = 'SET_PLANT'
+    const SET_PLANTS = 'SET_PLANTS'
 
-  export function setPlant(payload){
-    console.log(payload)
+  export function setPlants(plants){
       return {
-          type: SET_PLANT, payload: payload
+          type: SET_PLANTS, 
+          payload: plants
       }
   }
-    
+  
     export default function (state = initialState, action) {
       switch (action.type) {
-        case SET_PLANT:
-          return {...state, plant: action.payload}  
+        case SET_PLANTS:
+          return {...state, plants: action.payload}
         default:
           return initialState;
       }

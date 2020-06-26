@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
-import {setUser} from '../redux/reducer';
+import {setUser} from '../redux/reducers/authReducer';
 import '../style/styleLand.css'
 import plantIcon from "../images/black+plant+png.png"
 
@@ -24,8 +24,8 @@ class Landing extends Component {
         const { email, password } = this.state
         await axios.post('/auth/login', {email, password})
         .then( res => {
+            console.log(res.data)
             this.props.setUser(res.data)
-            //console.log(res.data, "3")
             this.props.history.push('/dash')})
         .catch(err => {alert('Could not log in')})
     }
@@ -34,7 +34,6 @@ class Landing extends Component {
         return(
             <div className="outer-land-container">
             <div className="land-container">
-                {/* <h1>Plantsiful</h1> */}
                 <div className="login-form-container">
                     <img className="avatar"
                     src={plantIcon} alt="source: https://www.juliakcrist.com/desktopicons"/>
@@ -72,5 +71,5 @@ class Landing extends Component {
         )
     }
 }
-//const mapStateToProps = reduxState => reduxState
-export default connect(null, {setUser})(Landing)
+const mapStateToProps = reduxState => reduxState.authReducer
+export default connect(mapStateToProps, {setUser})(Landing)

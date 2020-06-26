@@ -1,32 +1,8 @@
-// import React, {useState} from 'react'
-// import {useDispatch} from 'react-redux'
-// import {login} from '../redux/reducer'
-
-// function Register() {
-//     const [email, setEmail] = useState('')
-//     const dispatch = useDispatch()
-//     //const handleChange = ({name, value}) => this.setSTate({[name]: value})
-
-//     return (
-//         <div>
-//             <div>
-//                 <div>
-//                     <h1>Register</h1>
-//                     <input placeholder="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)}/><br/>
-//                     <button onClick={ () => dispatch(login({email, password}))}>Register</button>
-//                 </div>
-//             </div>
-//             <pre>{JSON.stringify(email, null, 2)}</pre>
-//         </div>
-//     )
-// }
-
-// export default Register;
 import React, { Component } from 'react';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
-import {setUser} from '../redux/reducer';
+import {setUser} from '../redux/reducers/authReducer';
 import '../style/styleLand.css'
 import plantIcon from "../images/black+plant+png.png"
 
@@ -36,7 +12,7 @@ class Register extends Component {
         this.state = {
             firstName: '',
             lastName: '',
-            profilePic: '',
+            phone: '',
             email: '',
             password: ''
         }
@@ -48,15 +24,15 @@ class Register extends Component {
     }
     register = async (e) => {
         e.preventDefault();
-        const { email, password, firstName, lastName} = this.state
-        await axios.post('/auth/register', {email, password, firstName, lastName})
+        const { email, password, phone, first_name, last_name} = this.state
+        await axios.post('/auth/register', {email, password, phone, first_name, last_name})
         .then( res => {
             this.props.setUser(res.data)
             this.props.history.push('/dash')})
         .catch(err => {alert('Could not register')})
     }
      render(){
-         const { email, password, firstName, lastName } = this.state
+         const { email, password, phone, first_name, last_name } = this.state
         return(
             <div className="land-container">
                 {/* <h1>Plantsiful</h1> */}
@@ -70,17 +46,18 @@ class Register extends Component {
                     <input 
                     className="login-input"
                     type="text" 
-                    placeholder="First Name" name="firstName" 
-                    value={firstName} 
+                    placeholder="First Name" name="first_name" 
+                    value={first_name} 
                     onChange={ e => this.changeHandler(e)}/>
                     <p className="login-text">Last Name</p>
                     <input 
                     className="login-input"
                     type="text" 
-                    placeholder="Last Name" name="lastName" 
-                    value={lastName} 
+                    placeholder="Last Name" name="last_name" 
+                    value={last_name} 
                     onChange={ e => this.changeHandler(e)}/>
-                    {/* <input type="text" placeholder="Profile Picture" name="profilePic" value={profilePic} onChange={ e => this.changeHandler(e)}/> */}
+                    <p className="login-text">Phone Number</p>
+                    <input type="number" placeholder="Phone Number" name="phone" value={phone} onChange={ e => this.changeHandler(e)}/>
                     <p className="login-text">Email</p>
                     <input 
                     className="login-input"
@@ -109,4 +86,5 @@ class Register extends Component {
         )
     }
 }
-export default connect(null, {setUser})(Register)
+const mapStateToProps = reduxState => reduxState.authReducer
+export default connect(mapStateToProps, {setUser})(Register)

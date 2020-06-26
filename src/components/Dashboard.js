@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import Plant from './Plant'
 import '../style/styleDash.css'
-import {connect} from 'react-redux';
+import {connect} from 'react-redux'; // connects you to the redux state and then saves this reduxState on the props. It also connects the actions to the props. 
+import {getUser} from '../redux/reducers/authReducer'
+import {setPlants} from '../redux/reducers/plantReducer'
 
 class Dashboard extends Component {
     constructor(props) {
@@ -13,24 +15,29 @@ class Dashboard extends Component {
     }
 
     componentDidMount() {
-        if (this.props.user 
+        console.log(this.props)
+        //this.props.getUser()
+        if (this.props.user
             && this.props.user.user_id)
             {this.setPlant()}
-    }
+        else 
+            {this.props.history.push('/')}
+    } 
 
     setPlant = () => {
+        console.log(this.props.user.user_id)
         axios
         .get('/api/plants')
         .then((res) => { 
             console.log(res.data)
-            this.setState({plants: res.data })})
+            this.props.setPlants(res.data)})
         .catch((err) => console.log(err))
     }
 
     render() {
         return (
             <div className="dash-container" id="Dash">
-                {this.state.plants.map((plant) => {
+                {this.props.plants.map((plant) => {
                     return <Plant key={plant.plant_id}
                     setPlant={this.setPlant}
                     plant={plant} />
@@ -40,5 +47,9 @@ class Dashboard extends Component {
     }
 }
 
-const mapStateToProps = reduxState => reduxState;
-export default connect(mapStateToProps)(Dashboard);
+const mapStateToProps = reduxState => ({
+    user: reduxState.authReducer.user,
+    plants: reduxState.plantReducer.plants
+});
+const mapDispatchToProps = { getUser, setPlants }
+export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);

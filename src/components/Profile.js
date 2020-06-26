@@ -10,9 +10,10 @@ class Profile extends Component {
         this.state = {
             email: '',
             password: '',
-            firstName: '',
-            lastName: '',
-            profilePic: ''
+            phone: '',
+            first_name: '',
+            last_name: '',
+            profile_pic: ''
         }
     }
     changeHandler = (e) => {
@@ -22,41 +23,57 @@ class Profile extends Component {
     }
     componentDidMount() {
         this.setState({
-            firstName: this.props.user.first_name,
-            lastName: this.props.user.last_name, 
-            profilePic: this.props.user.profile_pic, 
-            email: this.props.user.email, 
-            password: this.props.user.password})
+            first_name: this.props.user.first_name || "",
+            last_name: this.props.user.last_name || "", 
+            profile_pic: this.props.user.profile_pic || "", 
+            email: this.props.user.email || "", 
+            password: this.props.user.password || "",
+            phone: this.props.user.phone || ""})
         console.log(this.props)
     }
     update = async (e) => {
         e.preventDefault();
-        const { email, password, firstName, lastName, profilePic } = this.state
-        await axios.put('/auth/user', {email, password, firstName, lastName, profilePic})
+        const { email, password, phone, first_name, last_name, profile_pic } = this.state
+        await axios.put('/auth/user', {email, password, phone, first_name, last_name, profile_pic})
         .then( res => {
             this.props.setUser(res.data)
             this.props.history.push('/dash')
         })
         .catch(err => {alert('Could not update user information')})
     }
-    // logout = () => {
-    //     axios.delete('/auth/logout')
-    //     .then( () => { this.props.history.push('/')})
-    // }
+    logout = () => {
+        axios.delete('/auth/logout')
+        .then( () => {
+            this.props.logoutUser()
+            this.props.history.push('/')})
+    }
      render(){
-         const { email, password, firstName, lastName, profilePic } = this.state
+         const { email, password, phone, first_name, last_name, profile_pic } = this.state
         return(
             <div>
                 This is the Profile component
-                <Link to='/' onClick={this.props.logoutUser}>
+                <Link to='/' onClick={() => this.logout()}>
                 Log Out
                 </Link>
                 <form onSubmit={(e) => this.update(e)}>
-                    <input type="text" placeholder="First Name" name="firstName" value={firstName} onChange={ e => this.changeHandler(e)}/>
-                    <input type="text" placeholder="Last Name" name="lastName" value={lastName} onChange={ e => this.changeHandler(e)}/>
-                    <input type="text" placeholder="Profile Picture" name="profilePic" value={profilePic} onChange={ e => this.changeHandler(e)}/>
-                    <input type="text" placeholder="email" name="email" value={email} onChange={ e => this.changeHandler(e)}/>
-                    <input type='password' placeholder="password" name="password" value={password} onChange={ e => this.changeHandler(e)}/>
+                    <input type="text" placeholder="First Name" name="first_name" 
+                    value={first_name} 
+                    onChange={ e => this.changeHandler(e)}/>
+                    <input type="text" placeholder="Last Name" name="last_name" 
+                    value={last_name} 
+                    onChange={ e => this.changeHandler(e)}/>
+                    <input type="text" placeholder="Profile Picture" name="profile_pic" 
+                    value={profile_pic} 
+                    onChange={ e => this.changeHandler(e)}/>
+                    <input type="text" placeholder="Phone Number" name="phone" 
+                    value={phone} 
+                    onChange={ e => this.changeHandler(e)}/>
+                    <input type="text" placeholder="email" name="email" 
+                    value={email} 
+                    onChange={ e => this.changeHandler(e)}/>
+                    <input type='password' placeholder="password" name="password" 
+                    value={password} 
+                    onChange={ e => this.changeHandler(e)}/>
                     <input type='submit' value='update'/>
                 </form>
                 <span>Finished updating user profile?</span>
@@ -66,5 +83,6 @@ class Profile extends Component {
     }
 }
 
-const mapStateToProps = reduxState => reduxState
-export default connect(mapStateToProps, {setUser})(Profile)
+const mapStateToProps = reduxState => reduxState.authReducer
+const mapDispatchToProps = {setUser, logoutUser}
+export default connect(mapStateToProps, mapDispatchToProps)(Profile)

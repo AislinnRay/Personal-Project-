@@ -1,35 +1,62 @@
 .Plant {
-  width: 300px;
-  padding: 10px;
-  border-radius: 7px;
-  background-color: #fff;
+  background-color: #ffffff;
+  border-radius: 10px 10px 10px 10px;
+  overflow: hidden;
+  height: 500px;
+  max-height: 50vh;
+  min-height: 500px;
+  max-width: 20vw;
+  min-width: 300px;
+  margin: 20px;
+  -webkit-box-shadow: 0px 12px 18px -6px black;
+  box-shadow: 0px 12px 18px -6px black;
+  -ms-flex-preferred-size: calc(33.3333% - 10px);
+      flex-basis: calc(33.3333% - 10px);
+}
+
+.Plant .plant_img {
+  max-width: 250px;
+  min-width: 200px;
+  max-height: 250px;
+  min-height: 200px;
+  margin-top: 30px;
+  background-position: center;
+}
+
+.Plant .plant_img .text-button-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+}
+
+.Plant .plant_img .text-button-container .plant-title {
+  font-size: 24px;
+  margin: 10px;
+}
+
+.Plant .plant_img .text-button-container .plant-note {
+  font-size: 25px;
+  padding: 5px;
+  margin: 100px;
+}
+
+.Plant .plant_img .text-button-container .buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: space-around;
+      -ms-flex-align: space-around;
+          align-items: space-around;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  margin: 10px;
-  overflow: hidden;
-  -webkit-box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.1), 5px 5px 5px rgba(0, 0, 0, 0.2);
-          box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.1), 5px 5px 5px rgba(0, 0, 0, 0.2);
+      -ms-flex-direction: none;
+          flex-direction: none;
 }
 
-.plant_img {
-  position: relative;
-  width: 320px;
-  height: 200px;
-  background-position: center;
-  background-size: cover;
-  margin: 5px;
-  background: url("https://cdn.pixabay.com/photo/2017/05/23/12/57/succulents-2337197__480.jpg");
-}
-
-.plant_button {
+.Plant .plant_img .text-button-container .buttons .plant-button {
   background-color: white;
   border-radius: 7px;
   -webkit-box-align: center;
@@ -50,59 +77,19 @@
   border: 1px solid black;
 }
 
-.plant_title {
-  font-size: 24px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  position: relative;
-  margin: 10px;
-}
-
-.plant_note {
-  font-size: 20px;
-}
-
-.buttons {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-}
-
-@media (min-width: 500px) {
+@media (max-width: 830px) {
   .Plant {
-    width: 350px;
-  }
-}
-
-@media (min-width: 830px) {
-  .Plant {
-    width: 350px;
-  }
-}
-
-@media (min-width: 1000px) {
-  .Plant {
-    width: 350px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .Plant {
-    width: 300px;
-  }
-  .plant_img {
-    margin: 0;
-  }
-  .plant_box {
-    top: 5px;
-    left: 350px;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    background-color: #ffffff;
+    border-radius: 10px 10px 10px 10px;
+    overflow: hidden;
+    height: 100px;
+    max-height: 80vh;
+    min-height: 500px;
+    max-width: 60vw;
+    min-width: 300px;
+    margin: 10px;
+    -webkit-box-shadow: 0px 12px 18px -6px black;
+    box-shadow: 0px 12px 18px -6px black;
   }
 }
 /*# sourceMappingURL=stylePlant.css.map */

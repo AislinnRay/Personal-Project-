@@ -14,7 +14,7 @@
 }
 
    .land-container{
-       @include flexCenter(row, url('../images/beautiful-1866867_1920.jpg'));
+       @include landingflexCenter(row, url('../images/beautiful-1866867_1920.jpg'));
    }
    .login-form-container{
     width: 320px;

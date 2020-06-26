@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import "../style/styleAddPlant.css";
 import { connect } from "react-redux";
-import Chart from './Chart';
+// import Chart from './Chart';
 
 class AddPlant extends Component {
   constructor(props) {
@@ -19,11 +19,11 @@ class AddPlant extends Component {
   }
 
   componentDidMount() {
-    console.log(this.props);
+    //console.log(this.props);
     const { plant_id } = this.props.match.params;
     if (plant_id) {
       axios.get(`/api/plants/${plant_id}`).then((results) => {
-        console.log(results);
+        //console.log(results);
         this.setState({
           common_name: results.data.common_name,
           scientific_name: results.data.scientific_name,
@@ -183,9 +183,9 @@ class AddPlant extends Component {
             </div>
           )}
         </div>
-        <div className="chart-container">
+        {/* <div className="chart-container">
             <Chart className="chart"/>
-        </div>
+        </div> */}
       </div>
     );
   }

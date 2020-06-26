@@ -1,4 +1,4 @@
-@mixin flexCenter($direction, $background) {
+@mixin landingflexCenter($direction, $background) {
     height: 100vh;
     margin: 0;
     padding: 0;
@@ -24,4 +24,43 @@
     justify-content: center;
     align-items: space-around;
     flex-direction: $direction;
+}
+
+@mixin flexCenter($direction) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: $direction;
+    font-family: sans-serif;
+}
+
+@mixin coverBackground($background){
+    background: $background;
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+}
+
+@mixin card($height, $margin, $max-height, $max-width){
+    background-color: #ffffff;
+    border-radius: 10px 10px 10px 10px;
+    overflow: hidden;
+    height: $height;
+    max-height: $max-height;
+    min-height: 500px;
+    max-width: $max-width;
+    min-width: 300px;
+    margin: $margin;
+    -webkit-box-shadow: 0px 12px 18px -6px black;
+        box-shadow: 0px 12px 18px -6px black;
+}
+
+@mixin gridz($max-height, $flex-direction){
+    max-height: $max-height;
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: $flex-direction;
+    margin: 5px;
+    justify-content: center;
+    align-items: center;
 }

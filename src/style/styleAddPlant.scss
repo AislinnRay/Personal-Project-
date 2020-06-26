@@ -67,22 +67,22 @@
     font-size: 16px;
   }
 
-  .chart-container {
-    @include flexSpaceAround(column);
-    background: rgb(26, 78, 78);
-    height: 500px;
-    width: 500px;
-    left: 20%;
-    top: 40%;
+  // .chart-container {
+  //   @include flexSpaceAround(column);
+  //   background: rgb(26, 78, 78);
+  //   height: 500px;
+  //   width: 500px;
+  //   left: 20%;
+  //   top: 40%;
 
-    .chart{
-      @include flexSpaceAround(column);
-      height: 400px;
-      width: 500px;
-      background-color: #9eb29a;
-      margin-right: 200px;
-    }
-  }
+  //   .chart{
+  //     @include flexSpaceAround(column);
+  //     height: 400px;
+  //     width: 500px;
+  //     background-color: #dde7db;
+  //     margin-right: 200px;
+  //   }
+  // }
 
   
   @media (min-width: 500px) {

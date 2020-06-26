@@ -1,79 +1,54 @@
 @import "./variables";
+@import "./mixins";
 
 .Plant {
-    width: 300px;
-    padding: 10px;
-    border-radius: 7px;
-    background-color: $white;
-    display:flex;
-    align-items: center;
-    flex-direction: column;
-    margin: 10px;
-    overflow: hidden;
-    box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.1), 5px 5px 5px rgba(0, 0, 0, 0.2);
-  }
+  @include card(500px, 20px, 50vh, 20vw);
+  flex-basis:calc(33.3333% - 10px);
 
   .plant_img {
-    position: relative;
-    width: 320px;
-    height: 200px;
+    //position: relative;
+    max-width: 250px;
+    min-width: 200px;
+    max-height: 250px;
+    min-height: 200px;
+    margin-top: 30px;
     background-position: center;
-    background-size: cover;
-    margin: 5px;
-    background: url('https://cdn.pixabay.com/photo/2017/05/23/12/57/succulents-2337197__480.jpg');
-  }
-  .plant_button {
-    background-color: white;
-    border-radius: 7px;
-    align-items: center;
-    padding: 5px;
-    display: flex;
-    margin: 15px;
-    justify-content: space-between;
-    flex-direction: row;
-    border:1px solid black;
-  }
-  .plant_title {
-    font-size: 24px;
-    display:flex;
-    position: relative;
-    margin: 10px;
-  }
-  .plant_note {
-    font-size: 20px;
-  }
-  .buttons{
-    display:flex;
-    justify-content: space-around;
 
+  .text-button-container {
+    display:flex;
+
+    .plant-title {
+          font-size: 24px;
+          margin: 10px;
+        }
+
+    .plant-note {
+          font-size: 25px;
+          padding: 5px;
+          margin: 100px;
+        }
+
+    .buttons{
+        @include flexSpaceAround(none);
+          
+        .plant-button {
+              background-color: white;
+              border-radius: 7px;
+              align-items: center;
+              padding: 5px;
+              display: flex;
+              margin: 15px;
+              justify-content: space-between;
+              flex-direction: row;
+              border:1px solid black;
+            }
+        }
+      }
   }
+}
   
-  @media (min-width: 500px) {
+  @media (max-width: 830px) {
     .Plant {
-      width: 350px;
+      @include card(100px, 10px, 80vh, 60vw);
     }
   }
-  @media (min-width: 830px) {
-    .Plant {
-      width: 350px;
-    }
-  }
-  @media (min-width: 1000px) {
-    .Plant {
-      width: 350px;
-    }
-  }
-  @media (min-width: 1200px) {
-    .Plant {
-      width: 300px;
-      //position: relative;
-    }
-    .plant_img {
-      margin: 0;
-    }
-    .plant_box {
-      top: 5px;
-      left: 350px;
-      flex-direction: row;
-    }
-  } 

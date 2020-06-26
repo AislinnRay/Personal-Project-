@@ -89,47 +89,6 @@
   font-size: 16px;
 }
 
-.chart-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: space-around;
-      -ms-flex-align: space-around;
-          align-items: space-around;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  background: #1a4e4e;
-  height: 500px;
-  width: 500px;
-  left: 20%;
-  top: 40%;
-}
-
-.chart-container .chart {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: space-around;
-      -ms-flex-align: space-around;
-          align-items: space-around;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  height: 400px;
-  width: 500px;
-  background-color: #9eb29a;
-  margin-right: 200px;
-}
-
 @media (min-width: 500px) {
   .Form {
     width: 450px;

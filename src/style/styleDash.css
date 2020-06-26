@@ -1,13 +1,9 @@
-.whitespace {
-  width: 100%;
-  height: 600px;
-  background: #617872;
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
-.land-container, .dash-container {
-  height: 100vh;
-  margin: 0;
-  padding: 0;
+.Dash {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -17,166 +13,104 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  background: url("../images/beautiful-1866867_1920.jpg");
-  background-size: cover;
-  background-position: center;
-  font-family: sans-serif;
-}
-
-.login-form-container {
-  width: 320px;
-  height: 420px;
-  background: rgba(0, 0, 0, 0.5);
-  color: #fff;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  padding: 70px 30px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-}
-
-#register-form-container {
-  height: 580px;
-}
-
-.avatar {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  position: absolute;
-  top: -60px;
-  left: calc(47% - 50px);
-  background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
-  padding: 10px;
-}
-
-h1 {
-  margin: 0;
-  padding: 20px 20px 20px;
-  text-align: left;
-  font-size: 42px;
-  font-family: 'Oleo Script Swash Caps', cursive;
-  display: inline;
-  left: -400px;
-}
-
-.login-form-container p, .land-span {
-  margin: 0;
-  padding: 0;
-  font-weight: bold;
-}
-
-.login-form-container input {
-  width: 100%;
-  margin-bottom: 20px;
-}
-
-.login-form-container input[type="text"], input[type="password"] {
-  border: none;
-  border-bottom: 1px solid #fff;
-  background: transparent;
-  outline: none;
-  height: 40px;
-  color: #fff;
-  font-size: 16px;
-}
-
-.login-form-container input[type="submit"] {
-  border: none;
-  outline: none;
-  height: 40px;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.15)), to(rgba(0, 0, 0, 0.15))), radial-gradient(at top center, rgba(255, 255, 255, 0.4) 0%, rgba(0, 0, 0, 0.4) 120%) #989898;
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.15) 0%, rgba(0, 0, 0, 0.15) 100%), radial-gradient(at top center, rgba(255, 255, 255, 0.4) 0%, rgba(0, 0, 0, 0.4) 120%) #989898;
-  color: #fff;
-  font-size: 18px;
-  border-radius: 20px;
-}
-
-.login-form-container input[type="submit"]:hover {
-  cursor: pointer;
-  background-image: -webkit-gradient(linear, left bottom, left top, from(#d299c2), to(#fef9d7));
-  background-image: linear-gradient(to top, #d299c2 0%, #fef9d7 100%);
-}
-
-.login-form-container a {
-  text-decoration: none;
-  font-size: 14px;
-  color: #fff;
-}
-
-@media (max-width: 500px) {
-  .login-form-container {
-    width: 300px;
-    margin-top: 100px;
-  }
-}
-
-@media (min-width: 500px) {
-  .login-form-container {
-    width: 300px;
-  }
-}
-
-@media (max-width: 830px) {
-  .login-form-container {
-    width: 320px;
-    margin-top: 100px;
-  }
-}
-
-@media (max-width: 1000px) {
-  .login-form-container {
-    width: 320px;
-    margin-top: 100px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .login-form-container {
-    width: 330px;
-  }
-  .avatar {
-    margin: 0;
-  }
-  .login-input {
-    top: 5px;
-    left: 350px;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-  }
-}
-
-.dash-container {
-  background: url("../images/white-painted-concrete-wall-888895_1920.jpg");
-}
-
-#Dash {
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  font-family: sans-serif;
+  background: url("../images/white-painted-concrete-wall-888895_1920.jpg");
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  padding: 5px 5px 5px 5px;
+}
+
+.Dash .grid {
+  max-height: 90%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin: 5px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.Dash .chart-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: space-around;
       -ms-flex-align: space-around;
           align-items: space-around;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  margin-left: 100px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #ffffff;
+  border-radius: 10px 10px 10px 10px;
+  overflow: hidden;
+  height: 500px;
+  max-height: 50vh;
+  min-height: 500px;
+  max-width: 500px;
+  min-width: 300px;
+  margin: 20px;
+  -webkit-box-shadow: 0px 12px 18px -6px black;
+  box-shadow: 0px 12px 18px -6px black;
+  min-width: 500px;
 }
 
-#Dash > * {
-  margin: 10px 0;
+.Dash .chart-container .chart {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: space-around;
+      -ms-flex-align: space-around;
+          align-items: space-around;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100px;
+  width: 100px;
+}
+
+@media (max-width: 830px) {
+  .grid {
+    max-height: 90%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin: 5px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin: 10px;
+  }
 }
 /*# sourceMappingURL=styleDash.css.map */

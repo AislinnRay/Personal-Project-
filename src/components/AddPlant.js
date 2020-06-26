@@ -14,6 +14,7 @@ class AddPlant extends Component {
       note: "",
       plant_img: "",
       water_interval: 10,
+      room: ""
     };
   }
 
@@ -29,7 +30,8 @@ class AddPlant extends Component {
           note: results.data.note,
           plant_img: results.data.plant_img,
           water_interval: results.data.water_interval,
-          isEdit: true,
+          room: results.data.room,
+          isEdit: true
         });
       });
     }
@@ -46,6 +48,7 @@ class AddPlant extends Component {
         note: "",
         plant_img: "",
         water_interval: "",
+        room: ""
       });
     }
   }
@@ -61,6 +64,7 @@ class AddPlant extends Component {
       note,
       plant_img,
       water_interval,
+      room
     } = this.state;
     axios
       .post("/api/plants", {
@@ -69,6 +73,7 @@ class AddPlant extends Component {
         note,
         plant_img,
         water_interval,
+        room
       })
       .then(() => {
         this.props.history.push("/dash");
@@ -82,6 +87,7 @@ class AddPlant extends Component {
       note,
       plant_img,
       water_interval,
+      room
     } = this.state;
     axios
       .put(`/api/plants/${this.props.match.params.plant_id}`, {
@@ -90,6 +96,7 @@ class AddPlant extends Component {
         note,
         plant_img,
         water_interval,
+        room
       })
       .then(() => {
         this.props.history.push("/dash");
@@ -103,6 +110,7 @@ class AddPlant extends Component {
       note: "",
       plant_img: "",
       water_interval: 10,
+      room: "",
     });
 
   render() {
@@ -112,6 +120,7 @@ class AddPlant extends Component {
       note,
       plant_img,
       water_interval,
+      room,
       isEdit,
     } = this.state;
     return (
@@ -153,6 +162,12 @@ class AddPlant extends Component {
             value={water_interval}
             onChange={(e) => this.handleChange(e.target)}
           />
+          <p>Room:</p>
+          <input
+            name="room"
+            value={room}
+            onChange={(e) => this.handleChange(e.target)}
+          />
           {isEdit ? (
             <button className="form_button_box" onClick={this.handleEdit}>
               Edit
@@ -169,7 +184,7 @@ class AddPlant extends Component {
           )}
         </div>
         <div className="chart-container">
-            <Chart/>
+            <Chart className="chart"/>
         </div>
       </div>
     );

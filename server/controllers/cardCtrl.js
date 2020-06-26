@@ -18,9 +18,9 @@ module.exports = {
     },
     addPlant: ( req, res ) => {
         const db = req.app.get('db')
-        const { common_name, scientific_name, note, plant_img, water_interval, created_at } = req.body
+        const { common_name, scientific_name, note, plant_img, water_interval, room, created_at } = req.body
         const { user_id } = req.session.user
-        db.add_plant(common_name, scientific_name, note, plant_img, water_interval, created_at, user_id)
+        db.add_plant(common_name, scientific_name, note, plant_img, water_interval, room, created_at, user_id)
         .then((result) => res.status(200).send(result))
         .catch((err) => res.status(500).send(err))
         //Count
@@ -39,9 +39,9 @@ module.exports = {
     editPlant: ( req, res ) => {
         const db = req.app.get('db')
         const { plant_id } = req.params
-        const { common_name, scientific_name, note, plant_img, water_interval, created_at }= req.body
+        const { common_name, scientific_name, note, plant_img, water_interval, room, created_at }= req.body
         console.log(req.body)
-        db.edit_plant(plant_id, common_name, scientific_name, note, plant_img, water_interval, created_at)
+        db.edit_plant(plant_id, common_name, scientific_name, note, plant_img, water_interval, room, created_at)
         .then((result) => {
             console.log(result)
             res.sendStatus(200)

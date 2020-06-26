@@ -7,9 +7,34 @@ class Chart extends Component {
     super(props);
 
     this.state = {
-        chartData: this.props.chartData
+        chartData: 
+        //this.props.chartData
+        {
+            labels: ['Living Room', 'Kitchen', 'Bathroom', 'Den', 'Dining Room'],
+                datasets: [
+                    {
+                        label: 'Plants',
+                        data: [
+                            4,
+                            2,
+                            2,
+                            5,
+                            this.props.count
+                        ],
+                        backgroundColor: [
+                            '#617872',
+                            '#9eb29a',
+                            '#b3cfcc',
+                            '#a0cfa5',
+                            '#e2d1c3'
+                        ],
+                    }
+                ]
+            },
+      count:0
     };
   }
+
 
   render() {
     return (

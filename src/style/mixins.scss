@@ -18,3 +18,10 @@
     border-radius: 50%;
     background-image: $background;
 }
+
+@mixin flexSpaceAround($direction){
+    display: flex;
+    justify-content: center;
+    align-items: space-around;
+    flex-direction: $direction;
+}

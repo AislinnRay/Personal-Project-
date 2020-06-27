@@ -5,7 +5,8 @@ import '../style/styleDash.css'
 import {connect} from 'react-redux'; // connects you to the redux state and then saves this reduxState on the props. It also connects the actions to the props. 
 import {getUser} from '../redux/reducers/authReducer'
 import {setPlants} from '../redux/reducers/plantReducer'
-import Chart from './Chart';
+import ClassChart from './ClassChart';
+import HooksChart from './HooksChart';
 
 class Dashboard extends Component {
     constructor(props) {
@@ -48,9 +49,13 @@ class Dashboard extends Component {
                             />
                     })}
                 </div>
-                <div className="chart-container">
-                <Chart className="chart"/>
-        </div>
+
+                <div className="charts-container">
+                {this.props.plants.length > 0 && <ClassChart className="charts"/>}
+                </div>
+                <div className="charts-container">
+                {this.props.plants.length > 0 && <HooksChart className="charts"/>}
+                </div>
             </div>
         )
     }

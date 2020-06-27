@@ -13,14 +13,13 @@
 
   .chart-container {
     @include flexSpaceAround(column);
-    @include card(500px, 20px, 50vh, 500px);
+    @include card(500px, 20px, 500px, 500px);
     min-width: 500px;
-
 
     .chart{
       @include flexSpaceAround(column);
-      height: 100px;
-      width: 100px;
+      // height: 100px;
+      // width: 100px;
     }
   }
 

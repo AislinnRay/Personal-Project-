@@ -63,7 +63,7 @@
   border-radius: 10px 10px 10px 10px;
   overflow: hidden;
   height: 500px;
-  max-height: 50vh;
+  max-height: 500px;
   min-height: 500px;
   max-width: 500px;
   min-width: 300px;
@@ -87,8 +87,6 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  height: 100px;
-  width: 100px;
 }
 
 @media (max-width: 830px) {

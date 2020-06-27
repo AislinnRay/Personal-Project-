@@ -12,7 +12,7 @@ function App(props) {
     <div className="App">
       {props.authReducer.isLoggedIn ? <Header/> : <AuthHeader/>}
       {routes}
-      {/* <Nav /> */}
+      <Nav />
     </div>
   );
 }

@@ -4,6 +4,7 @@ INSERT INTO users_plants (
     note,
     plant_img,
     water_interval,
+    room,
     user_id
     )
 VALUES 
@@ -13,5 +14,6 @@ VALUES
     , $4
     , $5
     , $6
+    ,$7
     )
 returning *;

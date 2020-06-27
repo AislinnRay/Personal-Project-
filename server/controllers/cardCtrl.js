@@ -18,15 +18,15 @@ module.exports = {
     },
     addPlant: ( req, res ) => {
         const db = req.app.get('db')
-        const { common_name, scientific_name, note, plant_img, water_interval, room, created_at } = req.body
+        const { common_name, scientific_name, note, plant_img, water_interval, room } = req.body
         const { user_id } = req.session.user
-        db.add_plant(common_name, scientific_name, note, plant_img, water_interval, room, created_at, user_id)
+        db.add_plant(common_name, scientific_name, note, plant_img, water_interval, room, user_id)
         .then((result) => res.status(200).send(result))
         .catch((err) => res.status(500).send(err))
         //Count
-        const heart = heartbeats.createHeart(1000 * 5)
-        heart.createEvent(1, async (count, last) => {console.log(count)
-            })
+        // const heart = heartbeats.createHeart(1000 * 5)
+        // heart.createEvent(1, async (count, last) => {console.log(count)
+        //     })
         //Count
     },
     deletePlant: ( req, res ) => {

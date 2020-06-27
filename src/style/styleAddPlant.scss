@@ -3,14 +3,13 @@
 
 .AddPlant-Container {
   @include flexSpaceAround(column);
-  overflow: hidden;
-  margin: 100px;
-  margin-left: 150px;
+  @include coverBackground(url('../images/white-painted-concrete-wall-888895_1920.jpg'))
+
 }
 
 .Form {
     width: 350px;
-    height: 670px;
+    height: 870px;
     padding: 15px;
     margin: 10px auto;
     border-radius: 7px;
@@ -85,41 +84,41 @@
   // }
 
   
-  @media (min-width: 500px) {
-    .Form {
-      width: 450px;
-    }
-  }
+  // @media (min-width: 500px) {
+  //   .Form {
+  //     width: 450px;
+  //   }
+  // }
   
-  @media (min-width: 830px) {
-    .Form {
-      position: fixed;
-      left: 45.5vw;
-      top: 150px;
-    }
-  }
+  // @media (min-width: 830px) {
+  //   .Form {
+  //     position: fixed;
+  //     // left: 45.5vw;
+  //     // top: 150px;
+  //   }
+  // }
   
-  @media (min-width: 1000px) {
-    .Form {
-      left: 53vw;
-    }
-  }
+  // @media (min-width: 1000px) {
+  //   .Form {
+  //     left: 53vw;
+  //   }
+  // }
   
-  @media (min-width: 1200px) {
-    .Form {
-      left: 57vw;
-    }
-  }
+  // @media (min-width: 1200px) {
+  //   .Form {
+  //     left: 57vw;
+  //   }
+  // }
   
-  @media (min-width: 1400px) {
-    @media (min-height: 950px) {
-      .Form {
-        width: 550px;
-        height: 650px;
-      }
-      .form_img_preview {
-        width: 420px;
-        height: 300px;
-      }
-    }
-  }
+  // @media (min-width: 1400px) {
+  //   @media (min-height: 950px) {
+  //     .Form {
+  //       // width: 550px;
+  //       // height: 650px;
+  //     }
+  //     .form_img_preview {
+  //       // width: 420px;
+  //       // height: 300px;
+  //     }
+  //   }
+  // }

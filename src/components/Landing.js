@@ -66,7 +66,7 @@ class Landing extends Component {
                     </div>
                 </div>
             </div>
-            <div className="whitespace">I am white space</div>
+            {/* <div className="whitespace">I am white space</div> */}
             </div>
         )
     }

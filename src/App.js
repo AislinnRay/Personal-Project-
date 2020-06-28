@@ -4,6 +4,7 @@ import routes from './routes';
 import Nav from './components/Nav';
 import Header from './components/Header';
 import AuthHeader  from './components/AuthHeader';
+import Footer from './components/Footer';
 import {connect} from 'react-redux';
 
 function App(props) {
@@ -13,6 +14,7 @@ function App(props) {
       {props.authReducer.isLoggedIn ? <Header/> : <AuthHeader/>}
       {routes}
       {/* <Nav /> */}
+      <Footer/>
     </div>
   );
 }

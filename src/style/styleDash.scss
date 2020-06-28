@@ -6,24 +6,18 @@
   @include flexCenter(column,);
   @include coverBackground(url('../images/white-painted-concrete-wall-888895_1920.jpg'));
   padding: 5px 5px 5px 5px;
-
   .grid {
     @include gridz(90%, row);
   }
-
   .chart-container {
     @include flexSpaceAround(column);
     @include card(400px, 20px, 400px, 400px);
     min-width: 400px;
-
     .chart{
       @include flexSpaceAround(column);
     }
   }
-
 }
-
-
 @media (max-width: 830px) {
     .grid {
       @include gridz(90%, column);

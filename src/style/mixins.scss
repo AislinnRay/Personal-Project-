@@ -64,3 +64,34 @@
     justify-content: center;
     align-items: center;
 }
+
+@mixin footer-text($color,$font-size){
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    color: $color;
+    font-size: $font-size;
+    font-family: arvo;
+}
+
+@mixin footer-link($display){
+    position: relative;
+    display: $display;
+    margin: 1rem;
+    color: black;
+    font-family: arvo;
+}
+
+
+@mixin footer-submit(){
+    display:flex;
+    background-color: transparent;
+    border: none;
+    border-bottom: .5px solid  rgb(65, 63, 63);
+    border-right: .5px solid rgb(65, 63, 63);
+    border-left: .5px solid rgb(65, 63, 63);
+    justify-content: center;
+    color:  rgb(119, 118, 118);
+    padding: 10px;
+    margin-bottom: 20px;
+}

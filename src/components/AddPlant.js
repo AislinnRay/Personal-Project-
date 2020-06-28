@@ -170,7 +170,7 @@ class AddPlant extends Component {
           />
           {isEdit ? (
             <button className="form_button_box" onClick={this.handleEdit}>
-              Edit
+              Save Updates
             </button>
           ) : (
             <div>
@@ -183,9 +183,25 @@ class AddPlant extends Component {
             </div>
           )}
         </div>
-        {/* <div className="chart-container">
-            <Chart className="chart"/>
-        </div> */}
+        {isEdit ? (
+          <div>
+            <p className="edit-p">Welcome to your plant's profile. Update any information or add more pictures!</p>
+          </div>
+        ):(
+          <div>
+            <p className="add-p">Add a plant.</p>
+          </div>
+          )}
+          {/* {isEdit ? (
+          <div>
+
+
+          </div>
+        ):(
+          <div>
+          
+          </div>
+          )} */}
       </div>
     );
   }

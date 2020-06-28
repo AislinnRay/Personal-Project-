@@ -12,6 +12,7 @@
     max-height: 250px;
     min-height: 200px;
     margin-top: 30px;
+    margin-bottom: 30px;
     background-position: center;
 
   .text-button-container {
@@ -19,13 +20,11 @@
 
     .plant-title {
           font-size: 24px;
-          margin: 10px 10px 10px 10px;
         }
 
     .plant-note {
           font-size: 25px;
           padding: 5px;
-          margin: 100px;
         }
       }
   }
@@ -33,7 +32,7 @@
 
 .buttons{
   @include flexSpaceAround(none);
-    
+    margin-top: 10px;
   .plant-button {
         background-color: white;
         border-radius: 7px;

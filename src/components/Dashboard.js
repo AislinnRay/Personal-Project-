@@ -49,10 +49,9 @@ class Dashboard extends Component {
                             />
                     })}
                 </div>
-
-                <div className="charts-container">
+                {/* <div className="charts-container">
                 {this.props.plants.length > 0 && <ClassChart className="charts"/>}
-                </div>
+                </div> */}
                 <div className="charts-container">
                 {this.props.plants.length > 0 && <HooksChart className="charts"/>}
                 </div>

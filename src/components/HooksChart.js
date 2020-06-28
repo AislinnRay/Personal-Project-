@@ -76,58 +76,58 @@ function HooksChart(props){
           })
       },[props.plantReducer.plants]) // this [] is the dependency array that makes this not only componentDidMount but componentWillMount. Re-runs the use effect yayy!
 
-      const defaultProps = {
-        displayTitle: true,
-        displayLegend: true,
-        legendPosition: "right",
-      };
 
     return(
         <div className="chart-container">
-        <div className="chart">
+        <div className="chart" 
+        style={{
+            height:'350px', 
+            width:'350px',
+            padding: '10px',
+            position: 'center',
+
+        }}
+        >
           <Pie
-            style="position: relative; height:40vh; width:80vw"
             data={state.chartData}
             options={{
               maintainAspectRatio: false,
+              responsive: true,
               title: {
-                display: defaultProps.displayTitle,
+                display: true,
                 text: "Plants per Room",
                 fontSize: 28,
                 position: "top",
               },
               legend: {
-                display: defaultProps.displayLegend,
-                position: defaultProps.legendPosition,
+                display: true,
+                position: 'bottom',
               },
               scales: {
-                yAxes: [{ticks: {beginAtZero: true}}]
-            }
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true,
+                        maxTicksLimit: 5,
+                        autoSkip: true,
+                        display: false,
+                        },
+                    gridLines: {
+                        display: false,
+                        }
+                    }],
+                xAxes: [{
+                    ticks: {
+                        display:false,
+                    },
+                    gridLines: {
+                        display: false,
+                    }
+                }],
+                }
             }}
           />
         </div>
-        <div className="chart">
-          <Bar
-            style="position: relative; height:40vh; width:80vw"
-            data={state.chartData}
-            options={{
-              maintainAspectRatio: false,
-              title: {
-                display: defaultProps.displayTitle,
-                text: "Plants per Room",
-                fontSize: 28,
-                position: "top",
-              },
-              legend: {
-                display: defaultProps.displayLegend,
-                position: defaultProps.legendPosition,
-              },
-              scales: {
-                  yAxes: [{ticks: {beginAtZero: true}}]
-              }
-            }}
-          />
-        </div>
+        
       </div>
     )
 }

@@ -23,6 +23,7 @@ function Plant({plant, history, setPlant}){
                 <div className="plant-title">
                     {plant.scientific_name}
                     </div>
+                <br/>
                 <div className="plant-note">
                     {plant.note}
                     </div>

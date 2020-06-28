@@ -62,15 +62,15 @@
   background-color: #ffffff;
   border-radius: 10px 10px 10px 10px;
   overflow: hidden;
-  height: 500px;
-  max-height: 500px;
+  height: 400px;
+  max-height: 400px;
   min-height: 500px;
-  max-width: 500px;
+  max-width: 400px;
   min-width: 300px;
   margin: 20px;
   -webkit-box-shadow: 0px 12px 18px -6px black;
   box-shadow: 0px 12px 18px -6px black;
-  min-width: 500px;
+  min-width: 400px;
 }
 
 .Dash .chart-container .chart {
@@ -109,6 +109,19 @@
         -ms-flex-align: center;
             align-items: center;
     margin: 10px;
+  }
+  .grid .chart-container {
+    background-color: #ffffff;
+    border-radius: 10px 10px 10px 10px;
+    overflow: hidden;
+    height: 100px;
+    max-height: 80vh;
+    min-height: 500px;
+    max-width: 60vw;
+    min-width: 300px;
+    margin: 10px;
+    -webkit-box-shadow: 0px 12px 18px -6px black;
+    box-shadow: 0px 12px 18px -6px black;
   }
 }
 /*# sourceMappingURL=styleDash.css.map */

@@ -2,11 +2,15 @@
 @import "./mixins";
 
 .AddPlant-Container {
-  @include flexSpaceAround(column);
-  @include coverBackground(url('../images/white-painted-concrete-wall-888895_1920.jpg'))
+  @include flexSpaceAround(row);
+
+  @include coverBackground(url('../images/houseplants-791120_1920.jpg'))
 
 }
-
+.add-p, .edit-p {
+  font-size: 25pt;
+  margin-right: 100px;
+}
 .Form {
     width: 350px;
     height: 870px;
@@ -29,7 +33,7 @@
   }
   
   .form_img_preview {
-    width: 350px;
+    width: 320px;
     height: 220px;
     margin: 7px auto;
     background-position: center;
@@ -66,59 +70,11 @@
     font-size: 16px;
   }
 
-  // .chart-container {
-  //   @include flexSpaceAround(column);
-  //   background: rgb(26, 78, 78);
-  //   height: 500px;
-  //   width: 500px;
-  //   left: 20%;
-  //   top: 40%;
-
-  //   .chart{
-  //     @include flexSpaceAround(column);
-  //     height: 400px;
-  //     width: 500px;
-  //     background-color: #dde7db;
-  //     margin-right: 200px;
-  //   }
-  // }
-
-  
-  // @media (min-width: 500px) {
-  //   .Form {
-  //     width: 450px;
-  //   }
-  // }
   
   // @media (min-width: 830px) {
   //   .Form {
   //     position: fixed;
   //     // left: 45.5vw;
   //     // top: 150px;
-  //   }
-  // }
-  
-  // @media (min-width: 1000px) {
-  //   .Form {
-  //     left: 53vw;
-  //   }
-  // }
-  
-  // @media (min-width: 1200px) {
-  //   .Form {
-  //     left: 57vw;
-  //   }
-  // }
-  
-  // @media (min-width: 1400px) {
-  //   @media (min-height: 950px) {
-  //     .Form {
-  //       // width: 550px;
-  //       // height: 650px;
-  //     }
-  //     .form_img_preview {
-  //       // width: 420px;
-  //       // height: 300px;
-  //     }
   //   }
   // }

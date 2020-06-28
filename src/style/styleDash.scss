@@ -13,13 +13,11 @@
 
   .chart-container {
     @include flexSpaceAround(column);
-    @include card(500px, 20px, 500px, 500px);
-    min-width: 500px;
+    @include card(400px, 20px, 400px, 400px);
+    min-width: 400px;
 
     .chart{
       @include flexSpaceAround(column);
-      // height: 100px;
-      // width: 100px;
     }
   }
 
@@ -30,5 +28,8 @@
     .grid {
       @include gridz(90%, column);
       margin: 10px;
+    .chart-container{
+      @include card(100px, 10px, 80vh, 60vw);
+    }
   }
 }

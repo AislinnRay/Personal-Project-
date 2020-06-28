@@ -8,14 +8,19 @@
   -webkit-box-align: space-around;
       -ms-flex-align: space-around;
           align-items: space-around;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  background: url("../images/white-painted-concrete-wall-888895_1920.jpg");
+      -ms-flex-direction: row;
+          flex-direction: row;
+  background: url("../images/houseplants-791120_1920.jpg");
   background-size: cover;
   background-position: center;
   min-height: 100vh;
+}
+
+.add-p, .edit-p {
+  font-size: 25pt;
+  margin-right: 100px;
 }
 
 .Form {
@@ -47,7 +52,7 @@
 }
 
 .form_img_preview {
-  width: 350px;
+  width: 320px;
   height: 220px;
   margin: 7px auto;
   background-position: center;

@@ -1,0 +1,8 @@
+@import "./mixins";
+@import "./variables";
+
+.hamburger-container {
+    position: absolute;
+    left: 50px;
+    //padding-right: 20vw;
+}

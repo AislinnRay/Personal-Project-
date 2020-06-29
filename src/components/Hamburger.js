@@ -37,14 +37,6 @@ const Hamburger = (props) => {
           </ul>
         )}
       </Transition>
-
-      {/* <button className="hamburger" id="hamburger">
-        <img
-          className="hamburger-img"
-          src="https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/menu-alt-256.png"
-          alt="navigation"
-        ></img>
-      </button> */}
       <HamburgerArrow {...{ isActive, toggleButton }} />
     </nav>
   );

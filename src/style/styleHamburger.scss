@@ -33,7 +33,7 @@
   }
   .box-entering {
     animation-name: entering;
-    animation-duration: 2s;
+    animation-duration: 1.5s;
     @include box-style();
   }
   .box-exiting {

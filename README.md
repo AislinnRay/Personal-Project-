@@ -111,18 +111,20 @@ URL, REST methods, and a sample of the data that is being sent or received for e
 		<Route path = '/register' component = {Register} />
 
 ## Point Plan:
-o	3+ responsive views (10)
+o	3+ responsive views (10) - components(Login.js, Register.js, Add.js, Profile.js)
 
-o	React hooks on 5 components (10)
+o	React hooks on 2 components (5) - components(HooksChart.js, HooksProfile.js)
 
-o	Functioning Authentication (10)
+o	Functioning Authentication (10) - 
+
+o	Redux with two reducers (15) - redux(store.js, reducers(authReducer.js, plantReducer.js))
+
+o	Sass/Less (10) - style
+
+o	Node Mailer (10) - utils(emailUtil.js)
+
+o	ChartJS (10) - components(HooksChart.js)
 
 o	Hosting (15)
-
-o	Sass/Less (10)
-
-o	Node Mailer (10)
-
-o	ChartJS (5)
 
 

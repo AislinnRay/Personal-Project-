@@ -1,38 +1,37 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { connect } from "react-redux";
 import { setUser, logoutUser } from "../redux/reducers/authReducer";
-import '../style/stylePro.css';
+import "../style/stylePro.css";
 
-class HooksProfile extends Component {
-  constructor() {
-    super();
-    this.state = {
-      email: "",
-      password: "",
-      phone: "",
-      first_name: "",
-      last_name: "",
-      profile_pic: "",
-    };
-  }
-  changeHandler = (e) => {
-    this.setState({
+function HooksProfile(props) {
+  const [state, setState] = useState({
+    email: "",
+    password: "",
+    phone: "",
+    first_name: "",
+    last_name: "",
+    profile_pic: "",
+  });
+
+  const changeHandler = (e) => {
+    setState({
       [e.target.name]: e.target.value,
     });
   };
-  componentDidMount() {
-    this.setState({
-      first_name: this.props.user.first_name || "",
-      last_name: this.props.user.last_name || "",
-      profile_pic: this.props.user.profile_pic || "",
-      email: this.props.user.email || "",
-      password: this.props.user.password || "",
-      phone: this.props.user.phone || "",
-    });
-    console.log(this.props);
-  }
-  update = async (e) => {
+
+  useEffect(() => {
+    setState({
+      first_name: props.user.first_name || "",
+      last_name: props.user.last_name || "",
+      profile_pic: props.user.profile_pic || "",
+      email: props.user.email || "",
+      password: props.user.password || "",
+      phone: props.user.phone || "",
+    })
+  }, [props.user])
+
+  const update = async (e) => {
     e.preventDefault();
     const {
       email,
@@ -41,7 +40,7 @@ class HooksProfile extends Component {
       first_name,
       last_name,
       profile_pic,
-    } = this.state;
+    } = state;
     await axios
       .put("/auth/user", {
         email,
@@ -52,86 +51,77 @@ class HooksProfile extends Component {
         profile_pic,
       })
       .then((res) => {
-        this.props.setUser(res.data);
-        this.props.history.push("/dash");
+        props.setUser(res.data);
+        props.history.push("/dash");
       })
       .catch((err) => {
         alert("Could not update user information");
       });
   };
-  logout = () => {
+  const logout = () => {
     axios.delete("/auth/logout").then(() => {
-      this.props.logoutUser();
-      this.props.history.push("/");
+      props.logoutUser();
+      props.history.push("/");
     });
   };
-  render() {
-    const {
-      email,
-      password,
-      phone,
-      first_name,
-      last_name,
-      profile_pic,
-    } = this.state;
-    return (
-      <div className="profile-container">
-        <div>
-          <img
-            className="profile-picture"
-            src={profile_pic}
-            alt="Profile"
-          />
 
-          <form onSubmit={(e) => this.update(e)}>
-            <input
-              type="text"
-              placeholder="First Name"
-              name="first_name"
-              value={first_name}
-              onChange={(e) => this.changeHandler(e)}
-            />
-            <input
-              type="text"
-              placeholder="Last Name"
-              name="last_name"
-              value={last_name}
-              onChange={(e) => this.changeHandler(e)}
-            />
-            <input
-              type="text"
-              placeholder="Profile Picture"
-              name="profile_pic"
-              value={profile_pic}
-              onChange={(e) => this.changeHandler(e)}
-            />
-            <input
-              type="text"
-              placeholder="Phone Number"
-              name="phone"
-              value={phone}
-              onChange={(e) => this.changeHandler(e)}
-            />
-            <input
-              type="text"
-              placeholder="email"
-              name="email"
-              value={email}
-              onChange={(e) => this.changeHandler(e)}
-            />
-            <input
-              type="password"
-              placeholder="password"
-              name="password"
-              value={password}
-              onChange={(e) => this.changeHandler(e)}
-            />
-            <input type="submit" value="update" />
-          </form>
-        </div>
+  return (
+    <div className="profile-container">
+      <div>
+        <img
+          className="profile-picture"
+          src={props.user.profile_pic}
+          alt="Profile"
+        />
+
+        <form onSubmit={(e) => update(e)}>
+          <input
+            type="text"
+            placeholder="First Name"
+            name="first_name"
+            value={props.user.first_name}
+            onChange={(e) => changeHandler(e)}
+          />
+          <input
+            type="text"
+            placeholder="Last Name"
+            name="last_name"
+            value={props.user.last_name}
+            onChange={(e) => changeHandler(e)}
+          />
+          <input
+            type="text"
+            placeholder="Profile Picture"
+            name="profile_pic"
+            value={props.user.profile_pic}
+            onChange={(e) => changeHandler(e)}
+          />
+          <input
+            type="text"
+            placeholder="Phone Number"
+            name="phone"
+            value={props.user.phone}
+            onChange={(e) => changeHandler(e)}
+          />
+          <input
+            type="text"
+            placeholder="email"
+            name="email"
+            value={props.user.email}
+            onChange={(e) => changeHandler(e)}
+          />
+          <input
+            type="password"
+            placeholder="password"
+            name="password"
+            value={props.user.password}
+            onChange={(e) => changeHandler(e)}
+          />
+          <input type="submit" value="update" />
+        </form>
       </div>
-    );
-  }
+    </div>
+  );
 }
 
 const mapStateToProps = (reduxState) => reduxState.authReducer;

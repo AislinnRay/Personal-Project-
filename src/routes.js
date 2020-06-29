@@ -11,8 +11,8 @@ export default (
     <Switch>
         <Route exact path = '/' component={Landing} />
         <Route path='/dash' component={Dashboard} />
-        <Route path='/profile' component={ClassProfile} />
-        {/* <Route path='/profile' component={HooksProfile} /> */}
+        {/* <Route path='/profile' component={ClassProfile} /> */}
+        <Route path='/profile' component={HooksProfile} />
 		<Route path='/register' component={Register} />
         <Route path = '/add' component = {AddPlant} />
        	<Route path = '/edit/:plant_id' component = {AddPlant} />

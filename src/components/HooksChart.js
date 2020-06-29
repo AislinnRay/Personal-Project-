@@ -36,6 +36,7 @@ function HooksChart(props){
           },
         count: 0,
       }) 
+      
       useEffect(() => {
         const array = props.plantReducer.plants
         const newArray = array.reduce(

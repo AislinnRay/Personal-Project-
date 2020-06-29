@@ -1,6 +1,4 @@
 .hamburger-container {
-  position: absolute;
-  left: 2vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -10,12 +8,14 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding: 15px;
   color: black;
   font-family: arvo;
   font-size: 14pt;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
+  position: absolute;
+  left: 2vw;
+  padding: 15px;
 }
 
 .hamburger-container .h-text {
@@ -28,21 +28,23 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin: 10px;
+  color: black;
+  font-family: arvo;
+  font-size: 14pt;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
-  color: black;
+  margin: 10px;
 }
 
 .hamburger-container .h-text:hover {
-  color: #575555;
+  color: #1d814f;
+  font-size: 16pt;
 }
 
 .box {
   position: absolute;
-  left: -200px;
-  overflow: hidden;
-  background: #a0cfa5;
+  left: -350px;
+  top: 55px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -60,20 +62,20 @@
           flex-direction: column;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
-  background: url("https://cdn.pixabay.com/photo/2017/05/13/17/31/leaf-2310212__480.jpg");
+  background: url("https://cdn.pixabay.com/photo/2017/01/24/03/53/plant-2004483__480.jpg");
   background-size: cover;
   background-position: center;
   min-height: 100vh;
-  min-height: 200px;
-}
-
-.box:focus {
-  display: none;
+  min-height: 300px;
+  max-height: 500px;
+  width: 200px;
+  -webkit-box-shadow: 0px 12px 18px -6px black;
+          box-shadow: 0px 12px 18px -6px black;
 }
 
 .box-entered {
-  left: 0px;
-  top: 60px;
+  left: 2vw;
+  top: 55px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -143,45 +145,49 @@
 
 @-webkit-keyframes entering {
   0% {
-    left: 0px;
-    top: 60px;
+    left: -300px;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
   }
   100% {
-    left: 0px;
-    top: 60px;
+    -webkit-transform: translateX(190%);
+            transform: translateX(190%);
   }
 }
 
 @keyframes entering {
   0% {
-    left: 0px;
-    top: 60px;
+    left: -300px;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
   }
   100% {
-    left: 0px;
-    top: 60px;
+    -webkit-transform: translateX(190%);
+            transform: translateX(190%);
   }
 }
 
 @-webkit-keyframes leaving {
   0% {
-    left: 0px;
-    top: 60px;
+    -webkit-transform: translateX(190%);
+            transform: translateX(190%);
   }
   100% {
-    left: 0px;
-    top: 60px;
+    left: -300px;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
   }
 }
 
 @keyframes leaving {
   0% {
-    left: 0px;
-    top: 60px;
+    -webkit-transform: translateX(190%);
+            transform: translateX(190%);
   }
   100% {
-    left: 0px;
-    top: 60px;
+    left: -300px;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
   }
 }
 /*# sourceMappingURL=styleHamburger.css.map */

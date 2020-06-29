@@ -2,44 +2,33 @@
 @import "./variables";
 
 .hamburger-container {
+    @include hamburger-style();
     position: absolute;
     left: 2vw;
-    display:flex;
-    align-items: center;
-    justify-content: center;
     padding:15px;
-    color: black;
-    font-family: arvo;
-    font-size: 14pt;
-    flex-wrap: nowrap;
-
     .h-text{
-    display:flex;
-    align-items: center;
-    justify-content: center;
+    @include hamburger-style();
     margin: 10px;
-    flex-wrap: nowrap;
-    color: black;
     }
     .h-text:hover{
-        color: rgb(87, 85, 85)
+        color: rgb(29, 129, 79);
+        font-size:16pt;
     }
 }
 .box {
     position: absolute;
-    left: -200px;
-    overflow: hidden;
-    background: $green;
+    left: -350px;
+    top:55px;
     @include box-style();
-    @include coverBackground(url('https://cdn.pixabay.com/photo/2017/05/13/17/31/leaf-2310212__480.jpg'));
-    min-height: 200px;
-  }
-  .box:focus{
-    display:none;
+    @include coverBackground(url('https://cdn.pixabay.com/photo/2017/01/24/03/53/plant-2004483__480.jpg'));
+    min-height: 300px;
+    max-height: 500px;
+    width: 200px;
+    box-shadow: 0px 12px 18px -6px black;
   }
   .box-entered {
-    left: 0px;
-    top: 60px;
+    left: 2vw;
+    top: 55px;
     @include box-style();
   }
   .box-entering {
@@ -52,24 +41,23 @@
     animation-duration: 1s;
     @include box-style();
   }
-  @keyframes entering {
+  
+@keyframes entering {
     0% {
-      left: 0px;
-      top: 60px;
+      left: -300px;
+      transform:translateX(0);
     }
     100% {
-      left: 0px;
-      top: 60px;
+        transform:translateX(190%);
     }
   }
   
   @keyframes leaving {
     0% {
-      left: 0px;
-      top: 60px;
+      transform:translateX(190%);
     }
     100% {
-      left: 0px;
-      top: 60px;
+      left: -300px;
+      transform:translateX(0);
     }
   }

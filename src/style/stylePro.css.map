@@ -1,8 +1,10 @@
 {
     "version": 3,
-    "mappings": "",
+    "mappings": "AAGA,AAAA,kBAAkB,CAAA;ECkCd,UAAU,EDjCe,2EAA2E;ECkCpG,eAAe,EAAE,KAAK;EACtB,mBAAmB,EAAE,MAAM;EAC3B,UAAU,EAAE,KAAK;EDnCjB,KAAK,EAAE,IAAI;CACd;;AAED,AAAA,gBAAgB,CAAA;EACZ,MAAM,EAAE,KAAK;CAChB",
     "sources": [
-        "stylePro.scss"
+        "stylePro.scss",
+        "mixins.scss",
+        "variables.scss"
     ],
     "names": [],
     "file": "stylePro.css"

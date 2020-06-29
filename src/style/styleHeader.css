@@ -43,6 +43,7 @@ nav.primary-navigation ul li {
 
 nav.primary-navigation li a {
   color: black;
+  font-size: 14pt;
 }
 
 nav.primary-navigation li a:hover {

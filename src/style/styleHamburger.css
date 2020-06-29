@@ -1,5 +1,187 @@
 .hamburger-container {
   position: absolute;
-  left: 50px;
+  left: 2vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 15px;
+  color: black;
+  font-family: arvo;
+  font-size: 14pt;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+.hamburger-container .h-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 10px;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  color: black;
+}
+
+.hamburger-container .h-text:hover {
+  color: #575555;
+}
+
+.box {
+  position: absolute;
+  left: -200px;
+  overflow: hidden;
+  background: #a0cfa5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 40px;
+  list-style-type: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  background: url("https://cdn.pixabay.com/photo/2017/05/13/17/31/leaf-2310212__480.jpg");
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  min-height: 200px;
+}
+
+.box:focus {
+  display: none;
+}
+
+.box-entered {
+  left: 0px;
+  top: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 40px;
+  list-style-type: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+.box-entering {
+  -webkit-animation-name: entering;
+          animation-name: entering;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 40px;
+  list-style-type: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+.box-exiting {
+  -webkit-animation-name: leaving;
+          animation-name: leaving;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 40px;
+  list-style-type: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+@-webkit-keyframes entering {
+  0% {
+    left: 0px;
+    top: 60px;
+  }
+  100% {
+    left: 0px;
+    top: 60px;
+  }
+}
+
+@keyframes entering {
+  0% {
+    left: 0px;
+    top: 60px;
+  }
+  100% {
+    left: 0px;
+    top: 60px;
+  }
+}
+
+@-webkit-keyframes leaving {
+  0% {
+    left: 0px;
+    top: 60px;
+  }
+  100% {
+    left: 0px;
+    top: 60px;
+  }
+}
+
+@keyframes leaving {
+  0% {
+    left: 0px;
+    top: 60px;
+  }
+  100% {
+    left: 0px;
+    top: 60px;
+  }
 }
 /*# sourceMappingURL=styleHamburger.css.map */

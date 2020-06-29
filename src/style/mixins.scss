@@ -95,3 +95,13 @@
     padding: 10px;
     margin-bottom: 20px;
 }
+
+@mixin box-style(){
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    list-style-type: none;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}

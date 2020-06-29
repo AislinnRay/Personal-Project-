@@ -3,6 +3,73 @@
 
 .hamburger-container {
     position: absolute;
-    left: 50px;
-    //padding-right: 20vw;
+    left: 2vw;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    padding:15px;
+    color: black;
+    font-family: arvo;
+    font-size: 14pt;
+    flex-wrap: nowrap;
+
+    .h-text{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    flex-wrap: nowrap;
+    color: black;
+    }
+    .h-text:hover{
+        color: rgb(87, 85, 85)
+    }
 }
+.box {
+    position: absolute;
+    left: -200px;
+    overflow: hidden;
+    background: $green;
+    @include box-style();
+    @include coverBackground(url('https://cdn.pixabay.com/photo/2017/05/13/17/31/leaf-2310212__480.jpg'));
+    min-height: 200px;
+  }
+  .box:focus{
+    display:none;
+  }
+  .box-entered {
+    left: 0px;
+    top: 60px;
+    @include box-style();
+  }
+  .box-entering {
+    animation-name: entering;
+    animation-duration: 2s;
+    @include box-style();
+  }
+  .box-exiting {
+    animation-name: leaving;
+    animation-duration: 1s;
+    @include box-style();
+  }
+  @keyframes entering {
+    0% {
+      left: 0px;
+      top: 60px;
+    }
+    100% {
+      left: 0px;
+      top: 60px;
+    }
+  }
+  
+  @keyframes leaving {
+    0% {
+      left: 0px;
+      top: 60px;
+    }
+    100% {
+      left: 0px;
+      top: 60px;
+    }
+  }

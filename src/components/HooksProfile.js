@@ -15,7 +15,7 @@ function HooksProfile(props) {
   });
 
   const changeHandler = (e) => {
-    setState({
+    setState({...state,
       [e.target.name]: e.target.value,
     });
   };

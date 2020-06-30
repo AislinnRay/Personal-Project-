@@ -98,8 +98,8 @@
 .box-entering {
   -webkit-animation-name: entering;
           animation-name: entering;
-  -webkit-animation-duration: 1.5s;
-          animation-duration: 1.5s;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

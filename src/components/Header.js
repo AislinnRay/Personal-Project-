@@ -36,7 +36,7 @@ const Header = (props) => {
                 <a href="#">About</a>
               </li>
               <li>
-                <a href="#">Contact</a>
+                <Link to='/contact'>Contact</Link>
               </li>
             </ul>
           </nav>

@@ -11,6 +11,9 @@ const app = express();
 const authCtrl = require('./controllers/authCtrl')
 const cardCtrl = require('./controllers/cardCtrl')
 
+//Utils
+const contactUtil = require('./utils/contactEmailUtil')
+
 //Top Level Middleware
 app.use(express.json());
 app.use(
@@ -52,3 +55,6 @@ app.post('/auth/login', authCtrl.login)
 app.get('/auth/user', authCtrl.getUser)
 app.delete('/auth/logout', authCtrl.logout)
 app.put('/auth/user', authCtrl.updateUser)
+
+//Nodemailer endpoints
+app.post("/api/contact", contactUtil.sendEmail);

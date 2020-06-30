@@ -1,5 +1,5 @@
 const bcrypt = require('bcrypt');
-const {sendEmail} = require('../utils/emailUtil')
+const {sendEmail} = require('../utils/registerEmailUtil')
 
 module.exports = {
     register: async ( req, res ) => {

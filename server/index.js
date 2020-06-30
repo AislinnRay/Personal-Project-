@@ -1,3 +1,4 @@
+// require('dotenv').config({ path:_dirname + '../.env'});
 require('dotenv').config();
 const express = require('express');
 const session = require('express-session');
@@ -5,6 +6,7 @@ const massive = require('massive');
 const heartbeats = require("heartbeats")
 const smsUtil = require("./utils/smsUtil")
 const {SERVER_PORT, CONNECTION_STRING, SESSION_SECRET} = process.env;
+const path = require('path')
 const app = express();
 
 //Controllers
@@ -13,6 +15,12 @@ const cardCtrl = require('./controllers/cardCtrl')
 
 //Utils
 const contactUtil = require('./utils/contactEmailUtil')
+
+//Hosting
+app.use(express.static(_dirname + '/../build'));
+app.get('*', (req, res) => {
+    res.sendFile(path.join(_dirname, '../build/index.html'))
+});
 
 //Top Level Middleware
 app.use(express.json());

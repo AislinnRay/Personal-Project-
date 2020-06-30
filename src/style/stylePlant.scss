@@ -7,13 +7,16 @@
 
   .plant_img {
     //position: relative;
-    max-width: 250px;
-    min-width: 200px;
-    max-height: 250px;
-    min-height: 200px;
+    // max-width: 250px;
+    // min-width: 200px;
+    // max-height: 250px;
+    // min-height: 200px;
+    height: 280px;
+    width: 280px;
     margin-top: 30px;
     margin-bottom: 30px;
     background-position: center;
+    object-fit: cover;
 
   .text-button-container {
     display:flex;

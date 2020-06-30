@@ -13,7 +13,7 @@ const Contact = props => {
   return (
     <div className="contact-container">
       <header className="contact-header">Need to get in touch?</header>
-      <h4></h4>
+      <h4 className="contact-blurb">Thanks for dropping by! Whether you have a comment or suggestion to share, we look forward to hearing from you.</h4>
       <section className="contact-box">
         <h5>Name</h5>
         <TextField

@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css';
 import routes from './routes';
-import Nav from './components/Nav';
 import Header from './components/Header';
 import AuthHeader  from './components/AuthHeader';
 import Footer from './components/Footer';
@@ -13,7 +12,6 @@ function App(props) {
     <div className="App">
       {props.authReducer.isLoggedIn ? <Header/> : <AuthHeader/>}
       {routes}
-      {/* <Nav /> */}
       <Footer/>
     </div>
   );

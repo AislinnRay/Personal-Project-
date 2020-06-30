@@ -4,7 +4,10 @@
 
 .Dash{
   @include flexCenter(column,);
-  @include coverBackground(url('../images/white-painted-concrete-wall-888895_1920.jpg'));
+  @include coverBackground(url(
+    'https://cdn.pixabay.com/photo/2017/06/04/18/14/marble-2371776__480.jpg'
+    ));
+    //'../images/white-painted-concrete-wall-888895_1920.jpg'
   padding: 5px 5px 5px 5px;
   .grid {
     @include gridz(90%, row);

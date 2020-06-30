@@ -86,7 +86,6 @@ function HooksChart(props){
             width:'350px',
             padding: '10px',
             position: 'center',
-
         }}
         >
           <Pie
@@ -99,6 +98,9 @@ function HooksChart(props){
                 text: "Plants per Room",
                 fontSize: 28,
                 position: "top",
+                fontFamily: 'arvo',
+                marginBottom: 10,
+                color: 'black',
               },
               legend: {
                 display: true,

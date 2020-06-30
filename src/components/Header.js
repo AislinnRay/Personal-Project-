@@ -1,9 +1,21 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
 import "../style/styleHeader.css";
 import Hamburger from "./Hamburger";
 
 const Header = (props) => {
+  const [profilePic, setProfilePic] = useState({
+    profile_pic: "",
+  });
+
+  useEffect(() => {
+    console.log(props.user.profile_pic)
+    setProfilePic({
+      profile_pic: props.user.profile_pic || "",
+    })
+  }, [props.user])
+
   return (
     <div>
       <h1>Plantsiful</h1>
@@ -43,6 +55,9 @@ const Header = (props) => {
           {/* <Link to="/dash">Dashboard</Link>
         <Link to="/profile">Profile</Link> */}
         </div>
+        {/* <div className='header-profile-pic' 
+                 style={{ backgroundImage: `url('${props.user.profile_pic}')` }}>
+                 </div> */}
       </span>
     </div>
   );

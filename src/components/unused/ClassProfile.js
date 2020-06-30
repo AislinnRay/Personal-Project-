@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { connect } from "react-redux";
-import { setUser, logoutUser } from "../redux/reducers/authReducer";
+import { setUser, logoutUser } from "../../redux/reducers/authReducer";
 import '../style/stylePro.css';
 
 class ClassProfile extends Component {

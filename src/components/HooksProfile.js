@@ -3,6 +3,7 @@ import axios from "axios";
 import { connect } from "react-redux";
 import { setUser, logoutUser } from "../redux/reducers/authReducer";
 import "../style/stylePro.css";
+import {TextField, Button} from '@material-ui/core'
 
 function HooksProfile(props) {
   const [state, setState] = useState({
@@ -74,50 +75,52 @@ function HooksProfile(props) {
           alt="Profile"
         />
 
-        <form onSubmit={(e) => update(e)}>
-          <input
+        <form className="profile-form-container" onSubmit={(e) => update(e)}>
+          <TextField
             type="text"
             placeholder="First Name"
             name="first_name"
             value={props.user.first_name}
             onChange={(e) => changeHandler(e)}
           />
-          <input
+          <TextField
             type="text"
             placeholder="Last Name"
             name="last_name"
             value={props.user.last_name}
             onChange={(e) => changeHandler(e)}
           />
-          <input
+          <TextField
             type="text"
             placeholder="Profile Picture"
             name="profile_pic"
             value={props.user.profile_pic}
             onChange={(e) => changeHandler(e)}
           />
-          <input
+          <TextField
             type="text"
             placeholder="Phone Number"
             name="phone"
             value={props.user.phone}
             onChange={(e) => changeHandler(e)}
           />
-          <input
+          <TextField
             type="text"
-            placeholder="email"
+            placeholder="Email"
             name="email"
             value={props.user.email}
             onChange={(e) => changeHandler(e)}
           />
-          <input
-            type="password"
-            placeholder="password"
+          <TextField
+            type="text"
             name="password"
+            placeholder="Password"
             value={props.user.password}
             onChange={(e) => changeHandler(e)}
           />
-          <input type="submit" value="update" />
+          <br/>
+          <br/>
+          <Button variant="outlined" type="submit" value="update">Update</Button>
         </form>
       </div>
     </div>

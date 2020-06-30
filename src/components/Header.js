@@ -9,12 +9,12 @@ const Header = (props) => {
     profile_pic: "",
   });
 
-  useEffect(() => {
-    console.log(props.user.profile_pic)
-    setProfilePic({
-      profile_pic: props.user.profile_pic || "",
-    })
-  }, [props.user])
+  // useEffect(() => {
+  //   console.log(props.user.profile_pic)
+  //   setProfilePic({
+  //     profile_pic: props.user.profile_pic || "",
+  //   })
+  // }, [props.user])
 
   return (
     <div>

@@ -107,7 +107,6 @@
 }
 
 @mixin hamburger-style(){
-
     display:flex;
     align-items: center;
     justify-content: center;
@@ -115,8 +114,4 @@
     font-family: arvo;
     font-size: 14pt;
     flex-wrap: nowrap;
-}
-
-@mixin hamburger-text(){
-
 }

@@ -26,7 +26,7 @@ const sendEmail = (req, res) => {
                 <td style="padding: 10px 0 30px 0;">
                     <table align="center" border="0" cellpadding="0" cellspacing="0" width="600" style="border: 1px solid #cccccc; border-collapse: collapse;">
                         <tr>
-                            <td align="center" bgcolor="#ffffff" style="padding: 0px 0 0px 0; color: #cccccc; font-size: 28px; font-weight: bold; font-family: Arial, sans-serif;">
+                            <td align="center" bgcolor="#ffffff" style="padding: 0px 0 0px 0; color: #d8d8d8; font-size: 28px; font-weight: bold; font-family: Arial, sans-serif;">
                                 <a href="http://localhost:3000/#/" style="color: #ffffff;">
                                 <img src='https://www.proflowers.com/blog/wp-content/uploads/2019/06/how-to-water-plants-on-vacation-hero-1.jpg'
                                  alt="Plants in pots" width="600" height="200" />
@@ -111,7 +111,7 @@ const sendEmail = (req, res) => {
                                                     <td style="font-size: 0; line-height: 0;" width="20">&nbsp;</td>
                                                     <td style="font-family: Arial, sans-serif; font-size: 12px; font-weight: bold;">
                                                         <a href="http://www.instagram.com/" style="color: #ffffff;">
-                                                            <img /src="https://image.flaticon.com/icons/svg/1384/1384015.svg" alt="Instagram" width="38" height="38"  border="0" />
+                                                            <img src="https://image.flaticon.com/icons/svg/1384/1384015.svg" alt="Instagram" width="38" height="38"  border="0" />
                                                         </a>
                                                     </td>
                                                 </tr>
@@ -128,6 +128,7 @@ const sendEmail = (req, res) => {
     </body>
     </html>
     `
+    
     const registerEmail = {
         from: FROM_EMAIL,
         to: email,

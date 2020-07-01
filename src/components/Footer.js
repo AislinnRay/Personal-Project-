@@ -33,7 +33,7 @@ const Footer = (props) => {
         </nav>
         <div className="footer-subscribe-container">
           <form className="footer-form">
-            <p className="subscribe-text">Stay in the Know</p>
+            <p className="subscribe-text">Stay In The Know</p>
             <input
               className="subscribe-input"
               type="text"

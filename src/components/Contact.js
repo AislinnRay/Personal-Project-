@@ -12,9 +12,9 @@ const Contact = props => {
   const [message, setMessage] = useState("");
   return (
     <div className="contact-container">
-      <header className="contact-header">Need to get in touch?</header>
-      <h4 className="contact-blurb">Thanks for dropping by! Whether you have a comment or suggestion to share, we look forward to hearing from you.</h4>
       <section className="contact-box">
+      <header className="contact-header">Need to get in touch?</header>
+      <p className="contact-blurb">Thanks for dropping by! Whether you have a comment or suggestion to share, we look forward to hearing from you.</p>
         <h5>Name</h5>
         <TextField
             name="name"
@@ -40,15 +40,15 @@ const Contact = props => {
         />
         <h5>Message</h5>
           <TextareaAutosize className="input-text"
-          rows="5"
+          rows="3"
           cols="38"
           onChange={e => {
             setMessage(e.target.value);
           }}
           value={message}
         />
-        <br />
-        <Button 
+        <div className="button-container">
+        <Button
           variant="outlined"
           onClick={() => {
             axios.post(`/api/contact`, { name, subject, email, message });
@@ -63,6 +63,7 @@ const Contact = props => {
         >
           Send
         </Button>
+        </div>
       </section>
       <ToastContainer autoClose={2000} />
     </div>

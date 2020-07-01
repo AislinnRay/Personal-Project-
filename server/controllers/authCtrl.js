@@ -19,6 +19,7 @@ module.exports = {
         delete newUserObj.password
 
         sendEmail(req)
+        
         req.session.user = newUserObj 
         // is the same as what is below
         // { 

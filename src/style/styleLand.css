@@ -1,9 +1,3 @@
-.whitespace {
-  width: 100%;
-  height: 600px;
-  background: #617872;
-}
-
 .land-container {
   height: 100vh;
   margin: 0;
@@ -21,15 +15,16 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  background: url("../images/beautiful-1866867_1920.jpg");
+  background: url("https://cdn.pixabay.com/photo/2018/05/15/21/36/background-3404345__480.jpg");
   background-size: cover;
   background-position: center;
   font-family: sans-serif;
+  height: 70vh;
 }
 
 .login-form-container {
-  width: 320px;
-  height: 420px;
+  width: 300px;
+  height: 360px;
   background: rgba(0, 0, 0, 0.5);
   color: #fff;
   -webkit-transform: translate(-50%, -50%);
@@ -38,7 +33,7 @@
           box-sizing: border-box;
   padding: 70px 30px;
   position: absolute;
-  top: 60%;
+  top: 40%;
   left: 50%;
 }
 
@@ -50,16 +45,16 @@
   width: 100px;
   height: 100px;
   border-radius: 50%;
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#d5d4d0), color-stop(1%, #d5d4d0), color-stop(31%, #eeeeec), color-stop(75%, #efeeec), to(#e9e9e7));
+  background-image: linear-gradient(to top, #d5d4d0 0%, #d5d4d0 1%, #eeeeec 31%, #efeeec 75%, #e9e9e7 100%);
   position: absolute;
   top: -60px;
   left: calc(47% - 40px);
-  background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
   padding: 10px;
 }
 
 h1 {
   margin: 0;
-  padding: 20px 20px 20px;
   text-align: left;
   font-size: 42px;
   font-family: 'Oleo Script Swash Caps', cursive;
@@ -80,11 +75,11 @@ h1 {
 
 .login-form-container input[type="text"], input[type="password"] {
   border: none;
-  border-bottom: 1px solid #fff;
+  border-bottom: 1px solid #fdfcfb;
   background: transparent;
   outline: none;
   height: 40px;
-  color: #fff;
+  color: #fdfcfb;
   font-size: 16px;
 }
 
@@ -94,38 +89,50 @@ h1 {
   height: 40px;
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.15)), to(rgba(0, 0, 0, 0.15))), radial-gradient(at top center, rgba(255, 255, 255, 0.4) 0%, rgba(0, 0, 0, 0.4) 120%) #989898;
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0.15) 0%, rgba(0, 0, 0, 0.15) 100%), radial-gradient(at top center, rgba(255, 255, 255, 0.4) 0%, rgba(0, 0, 0, 0.4) 120%) #989898;
-  color: #fff;
+  color: #fdfcfb;
   font-size: 18px;
   border-radius: 20px;
 }
 
 .login-form-container input[type="submit"]:hover {
   cursor: pointer;
-  background-image: -webkit-gradient(linear, left bottom, left top, from(#d299c2), to(#fef9d7));
-  background-image: linear-gradient(to top, #d299c2 0%, #fef9d7 100%);
+  background: -webkit-gradient(linear, left top, left bottom, from(#323232), color-stop(40%, #3F3F3F), color-stop(150%, #1C1C1C)), -webkit-gradient(linear, left bottom, left top, from(rgba(255, 255, 255, 0.4)), color-stop(200%, rgba(0, 0, 0, 0.25)));
+  background: linear-gradient(to bottom, #323232 0%, #3F3F3F 40%, #1C1C1C 150%), linear-gradient(to top, rgba(255, 255, 255, 0.4) 0%, rgba(0, 0, 0, 0.25) 200%);
+  background-blend-mode: multiply;
 }
 
 .login-form-container a {
   text-decoration: none;
   font-size: 14px;
-  color: #fff;
+  color: #fdfcfb;
 }
 
 @media (max-width: 500px) {
-  .login-form-container {
-    width: 300px;
+  .land-container {
+    height: 95vh;
   }
-}
-
-@media (min-width: 500px) {
   .login-form-container {
     width: 300px;
+    top: 400px;
+  }
+  #register-form-container {
+    height: 470px;
+    top: 460px;
+  }
+  .login-form-container input {
+    margin-bottom: 4px;
   }
 }
 
 @media (max-width: 830px) {
   .login-form-container {
     width: 320px;
+    height: 400px;
+    top: 500px;
+  }
+  #register-form-container {
+    height: 600px;
+    top: 500px;
   }
 }
 

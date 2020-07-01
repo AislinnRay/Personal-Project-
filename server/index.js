@@ -6,7 +6,7 @@ const massive = require('massive');
 const heartbeats = require("heartbeats")
 const smsUtil = require("./utils/smsUtil")
 const {SERVER_PORT, CONNECTION_STRING, SESSION_SECRET} = process.env;
-const path = require('path')
+//const path = require('path')
 const app = express();
 
 //Controllers
@@ -17,10 +17,10 @@ const cardCtrl = require('./controllers/cardCtrl')
 const contactUtil = require('./utils/contactEmailUtil')
 
 //Hosting
-app.use(express.static(_dirname + '/../build'));
-app.get('*', (req, res) => {
-    res.sendFile(path.join(_dirname, '../build/index.html'))
-});
+//app.use(express.static(__dirname + '/../build'));
+// app.get('*', (req, res) => {
+//     res.sendFile(path.join(__dirname, '../build/index.html'))
+// });
 
 //Top Level Middleware
 app.use(express.json());

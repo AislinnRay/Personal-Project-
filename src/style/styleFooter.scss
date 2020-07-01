@@ -2,8 +2,6 @@
 @import "./variables";
 
 .footer-container {
-    // padding:0px;
-    // margin:0px;
     .footer-nav-container{
         @include flexCenter(row);
         justify-content: space-between;
@@ -18,7 +16,7 @@
                 padding:0px;
                 .footer-li{
                     .footer-a{
-                        @include footer-text(inline-block);
+                        @include footer-text($dark-green,16pt);
                     }
                     .footer-a:hover{
                         color:$green;

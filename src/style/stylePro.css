@@ -64,19 +64,30 @@
 }
 
 .profile-container .profile-pic-form-container .profile-form-container {
-  background: white;
-  height: 300px;
-  width: 200px;
   padding-top: 20px;
+  background-color: #ffffff;
+  border-radius: 10px 10px 10px 10px;
+  overflow: hidden;
+  height: 300px;
+  max-height: 400px;
+  min-height: 500px;
+  max-width: 400px;
+  min-width: 300px;
+  margin: 10px;
+  -webkit-box-shadow: 0px 12px 18px -6px black;
+  box-shadow: 0px 12px 18px -6px black;
+  min-height: 200px;
 }
 
 .banner-box {
   -o-object-fit: cover;
      object-fit: cover;
-  top: 135px;
   width: 100%;
   height: 30vh;
-  background-position: center;
-  background: url("https://cdn.pixabay.com/photo/2016/11/29/08/55/architecture-1868547_960_720.jpg");
+  background-repeat: no-repeat;
+  background: url("https://cdn.pixabay.com/photo/2017/06/13/13/51/marble-2398946_960_720.jpg");
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0px;
 }
 /*# sourceMappingURL=stylePro.css.map */

@@ -105,14 +105,20 @@ const sendEmail = (req, res) => {
                                                 <tr>
                                                     <td style="font-family: Arial, sans-serif; font-size: 12px; font-weight: bold;">
                                                         <a href="http://www.twitter.com/" style="color: #ffffff;">
-                                                            <img src="https://image.flaticon.com/icons/svg/1384/1384017.svg" alt="Twitter" width="38" height="38"  border="0" />
+                                                            <img src="https://cdn3.iconfinder.com/data/icons/social-media-2174/512/Twitter-512.png" alt="Twitter" width="38" height="38"  border="0" />
                                                         </a>
                                                     </td>
                                                     <td style="font-size: 0; line-height: 0;" width="20">&nbsp;</td>
                                                     <td style="font-family: Arial, sans-serif; font-size: 12px; font-weight: bold;">
-                                                        <a href="http://www.instagram.com/" style="color: #ffffff;">
-                                                            <img src="https://image.flaticon.com/icons/svg/1384/1384015.svg" alt="Instagram" width="38" height="38"  border="0" />
+                                                        <a href="http://www.facebook.com/" style="color: #ffffff;">
+                                                            <img src="https://cdn3.iconfinder.com/data/icons/social-media-2174/512/Facebook-01-512.png" alt="Facebook" width="38" height="38"  border="0" />
                                                         </a>
+                                                        <td style="font-size: 0; line-height: 0;" width="20">&nbsp;</td>
+                                                    <td style="font-family: Arial, sans-serif; font-size: 12px; font-weight: bold;">
+                                                        <a href="http://www.pinterest.com/" style="color: #ffffff;">
+                                                            <img src="https://cdn3.iconfinder.com/data/icons/social-media-2174/512/Pintrest-256.png" alt="Pinterest" width="38" height="38"  border="0" />
+                                                        </a>
+                                                    </td>
                                                     </td>
                                                 </tr>
                                             </table>
@@ -126,7 +132,7 @@ const sendEmail = (req, res) => {
             </tr>
         </table>
     </body>
-    </html>
+    </html>    
     `
     
     const registerEmail = {

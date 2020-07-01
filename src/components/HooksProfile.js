@@ -59,21 +59,23 @@ function HooksProfile(props) {
         alert("Could not update user information");
       });
   };
-  const logout = () => {
-    axios.delete("/auth/logout").then(() => {
-      props.logoutUser();
-      props.history.push("/");
-    });
-  };
+  // const logout = () => {
+  //   axios.delete("/auth/logout").then(() => {
+  //     props.logoutUser();
+  //     props.history.push("/");
+  //   });
+  // };
 
   return (
     <div className="profile-container">
-      <div>
+      <div className="banner-box"></div>
+      <div className="profile-pic-form-container">
         <img
           className="profile-picture"
           src={props.user.profile_pic}
           alt="Profile"
         />
+        <p className="profile-name">{props.user.first_name} {props.user.last_name}</p>
 
         <form className="profile-form-container" onSubmit={(e) => update(e)}>
           <TextField

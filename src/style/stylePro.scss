@@ -3,31 +3,69 @@
 
 
 .profile-container{
-    @include coverBackground(url('https://cdn.pixabay.com/photo/2017/05/13/17/31/leaf-2310212__480.jpg'));
+    @include coverBackground(linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%));
+    //https://cdn.pixabay.com/photo/2017/05/13/17/31/leaf-2310212__480.jpg
     @include flexCenter(column);
     font-family: arvo;
     width: 100%;
-    height: 10vh;
-    .profile-picture{
-        width: 200px;
-        height: 200px;
-        object-fit: cover;
-    
-    }
-    .profile-form-container{
-        background: white;
-        height: 300px;
-        width: 200px;
+    min-height: 50vh;
+    max-height: 70vh;
+    .profile-pic-form-container{
+        width:400px;
+        height:600px;
+        display: flex;
+        justify-content: center;
+        //align-items: center;
+        flex-direction: row;
+        font-family: arvo;
+        padding-top:20px;
+        .profile-picture{
+            position: absolute;
+            left: 75px;
+            top: 250px;
+            z-index: 2;
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+        
+        }
+        .profile-name{
+            position: absolute;
+            left: 100px;
+            top: 450px;
+            z-index: 2;
+            @include contact-font(24pt);
+            color: black;
+        }
+        .profile-form-container{
+            background: white;
+            height: 300px;
+            width: 200px;
+            padding-top:20px;
+        }
     }
 
 }
-
-.profile-picture{
-    width: 200px;
-    height: 200px;
+.banner-box{
     object-fit: cover;
+    top:135px;
+    width: 100%;
+    height: 30vh;
+    background-position: center;
+
+    background: url('https://cdn.pixabay.com/photo/2016/11/29/08/55/architecture-1868547_960_720.jpg');
+    //z-index: -1;
+    // max-width:800px;
+    // min-width:300px;
+    // max-height: 800px;
+    // min-height: 200px;
+    // object-fit: scale-down;
+    // background-position: center;
+
 
 }
+
+
 
 // @media (min-width: 830px) {
     //   .Form {

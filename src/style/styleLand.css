@@ -151,7 +151,7 @@ h1 {
     margin: 0;
   }
   .login-input {
-    top: 5px;
+    top: 15px;
     left: 350px;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;

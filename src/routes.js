@@ -3,7 +3,6 @@ import { Switch, Route } from "react-router-dom";
 import Dashboard from "./components/Dashboard";
 import Landing from "./components/Landing";
 import Register from "./components/Register";
-//import ClassProfile from "./components/unused/ClassProfile";
 import HooksProfile from "./components/HooksProfile";
 import AddPlant from "./components/AddPlant";
 import Contact from "./components/Contact";

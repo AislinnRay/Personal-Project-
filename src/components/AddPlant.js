@@ -14,7 +14,7 @@ class AddPlant extends Component {
       note: "",
       plant_img: "",
       water_interval: 10,
-      room: ""
+      room: "",
     };
   }
 
@@ -31,7 +31,7 @@ class AddPlant extends Component {
           plant_img: results.data.plant_img,
           water_interval: results.data.water_interval,
           room: results.data.room,
-          isEdit: true
+          isEdit: true,
         });
       });
     }
@@ -48,7 +48,7 @@ class AddPlant extends Component {
         note: "",
         plant_img: "",
         water_interval: "",
-        room: ""
+        room: "",
       });
     }
   }
@@ -64,7 +64,7 @@ class AddPlant extends Component {
       note,
       plant_img,
       water_interval,
-      room
+      room,
     } = this.state;
     axios
       .post("/api/plants", {
@@ -73,7 +73,7 @@ class AddPlant extends Component {
         note,
         plant_img,
         water_interval,
-        room
+        room,
       })
       .then(() => {
         this.props.history.push("/dash");
@@ -87,7 +87,7 @@ class AddPlant extends Component {
       note,
       plant_img,
       water_interval,
-      room
+      room,
     } = this.state;
     axios
       .put(`/api/plants/${this.props.match.params.plant_id}`, {
@@ -96,7 +96,7 @@ class AddPlant extends Component {
         note,
         plant_img,
         water_interval,
-        room
+        room,
       })
       .then(() => {
         this.props.history.push("/dash");
@@ -129,8 +129,8 @@ class AddPlant extends Component {
           <img
             className="form_img_preview"
             src={plant_img}
-            //{`https://cdn.pixabay.com/photo/2019/02/08/21/53/plant-3984065_1280.jpg`} 
-            alt='potted plant'
+            //{`https://cdn.pixabay.com/photo/2019/02/08/21/53/plant-3984065_1280.jpg`}
+            alt="potted plant"
           />
           <p>Image URL:</p>
           <input
@@ -184,15 +184,22 @@ class AddPlant extends Component {
           )}
         </div>
         {isEdit ? (
-          <div>
-            <p className="edit-p">Welcome to your plant's profile. Update any information or add more pictures!</p>
+          <div className="edit-p-container">
+            <p className="edit-p">Welcome to your plant's profile.</p>
+            <p className="edit-p">
+              Update any information or add more pictures!
+            </p>
           </div>
-        ):(
-          <div>
-            <p className="add-p">Add a plant.</p>
+        ) : (
+          <div className="add-p-container">
+            <p className="edit-p">Welcome to your plant's profile.</p>
+            <p className="add-p">
+              Add a plant. Be sure to include any relevant information. This can
+              be updated at any time.
+            </p>
           </div>
-          )}
-          {/* {isEdit ? (
+        )}
+        {/* {isEdit ? (
           <div>
 
 
@@ -207,5 +214,5 @@ class AddPlant extends Component {
   }
 }
 
-const mapStateToProps = (reduxState) => reduxState.plantReducer
+const mapStateToProps = (reduxState) => reduxState.plantReducer;
 export default connect(mapStateToProps)(AddPlant);

@@ -17,7 +17,7 @@ const Contact = props => {
       <p className="contact-blurb">Thanks for dropping by! Whether you have a comment or suggestion to share, we look forward to hearing from you.</p>
         <h5>Name</h5>
         <TextField
-            name="name"
+            //name="name"
             value={name}
             onChange={e => {
               setName(e.target.value);

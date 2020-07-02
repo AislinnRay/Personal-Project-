@@ -27,6 +27,12 @@ function Plant({plant, history, setPlant}){
                 <div className="plant-note">
                     {plant.note}
                     </div>
+                <div className="plant-note">
+                    Location: {plant.room}
+                    </div>
+                    <div className="plant-note">
+                    Water Frequency (Days): {plant.water_interval}
+                    </div>
                 {/* <div className="plant_note">{plant.countdown}</div> */}
                 <div className="buttons">
                     <button className="plant-button"

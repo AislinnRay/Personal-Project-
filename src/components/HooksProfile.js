@@ -1,47 +1,22 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import { connect } from "react-redux";
 import { setUser, logoutUser } from "../redux/reducers/authReducer";
 import "../style/stylePro.css";
 import {TextField, Button} from '@material-ui/core'
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function HooksProfile(props) {
-  const [state, setState] = useState({
-    email: "",
-    password: "",
-    phone: "",
-    first_name: "",
-    last_name: "",
-    profile_pic: "",
-  });
-
-  const changeHandler = (e) => {
-    setState({...state,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  useEffect(() => {
-    setState({
-      first_name: props.user.first_name || "",
-      last_name: props.user.last_name || "",
-      profile_pic: props.user.profile_pic || "",
-      email: props.user.email || "",
-      password: props.user.password || "",
-      phone: props.user.phone || "",
-    })
-  }, [props.user])
+  const [email, setEmail] = useState(props.user.email);
+  const [password, setPassword] = useState(props.user.password);
+  const [phone, setPhone] = useState(props.user.pone);
+  const [first_name, setFirstName] = useState(props.user.first_name);
+  const [last_name, setLastName] = useState(props.user.last_name);
+  const [profile_pic, setProfilePic] = useState(props.user.profile_pic);
 
   const update = async (e) => {
     e.preventDefault();
-    const {
-      email,
-      password,
-      phone,
-      first_name,
-      last_name,
-      profile_pic,
-    } = state;
     await axios
       .put("/auth/user", {
         email,
@@ -52,19 +27,16 @@ function HooksProfile(props) {
         profile_pic,
       })
       .then((res) => {
+        toast.success("Profile has been successful updated", {
+          position: toast.POSITION.BOTTOM_RIGHT
+        });
         props.setUser(res.data);
-        props.history.push("/dash");
+        //props.history.push("/dash");
       })
       .catch((err) => {
         alert("Could not update user information");
       });
   };
-  // const logout = () => {
-  //   axios.delete("/auth/logout").then(() => {
-  //     props.logoutUser();
-  //     props.history.push("/");
-  //   });
-  // };
 
   return (
     <div className="profile-container">
@@ -82,49 +54,50 @@ function HooksProfile(props) {
             type="text"
             placeholder="First Name"
             name="first_name"
-            value={props.user.first_name}
-            onChange={(e) => changeHandler(e)}
+            value={first_name}
+            onChange={(e) => setFirstName(e.target.value)}
           />
           <TextField
             type="text"
             placeholder="Last Name"
             name="last_name"
-            value={props.user.last_name}
-            onChange={(e) => changeHandler(e)}
+            value={last_name}
+            onChange={(e) => setLastName(e.target.value)}
           />
           <TextField
             type="text"
             placeholder="Profile Picture"
             name="profile_pic"
-            value={props.user.profile_pic}
-            onChange={(e) => changeHandler(e)}
+            value={profile_pic}
+            onChange={(e) => setProfilePic(e.target.value)}
           />
           <TextField
             type="text"
             placeholder="Phone Number"
             name="phone"
-            value={props.user.phone}
-            onChange={(e) => changeHandler(e)}
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
           />
           <TextField
             type="text"
             placeholder="Email"
             name="email"
-            value={props.user.email}
-            onChange={(e) => changeHandler(e)}
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
           <TextField
             type="text"
             name="password"
             placeholder="Password"
-            value={props.user.password}
-            onChange={(e) => changeHandler(e)}
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
           />
           <br/>
           <br/>
           <Button variant="outlined" type="submit" value="update">Update</Button>
         </form>
       </div>
+      <ToastContainer autoClose={2000} />
     </div>
   );
 }

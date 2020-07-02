@@ -1,19 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
-import {
-  Pie,
-  Bar,
-  Line,
-  Radar,
-  Doughnut,
-  Bubble,
-  Scatter,
-} from "react-chartjs-2";
+import {Bar} from "react-chartjs-2";
 
-function HooksChart(props){
+function BarChart(props){
     const [state, setState] = useState({
         chartData:
-          //props.chartData
           {
             labels: ["Living Room", "Kitchen", "Bathroom", "Den", "Dining Room"],
             datasets: [
@@ -25,7 +16,8 @@ function HooksChart(props){
                   "#9eb29a",
                   "#b3cfcc",
                   "#a0cfa5",
-                  "#e2d1c3",
+                  "#6a7086",
+                  "#a8a8ad",
                 ],
                 boarderWidth: 1,
                 borderColor: "#ffffff",
@@ -53,7 +45,6 @@ function HooksChart(props){
           )
           setState({
             chartData:
-              //props.chartData
               {
                 labels: newArray[0],
                 datasets: [
@@ -65,7 +56,9 @@ function HooksChart(props){
                       "#9eb29a",
                       "#b3cfcc",
                       "#a0cfa5",
-                      "#e2d1c3",
+                      "#6a7086",
+                      "#a8a8ad",
+
                     ],
                     boarderWidth: 1,
                     borderColor: "#ffffff",
@@ -88,7 +81,7 @@ function HooksChart(props){
             position: 'center',
         }}
         >
-          <Pie
+        <Bar
             data={state.chartData}
             options={{
               maintainAspectRatio: false,
@@ -112,7 +105,7 @@ function HooksChart(props){
                         beginAtZero: true,
                         maxTicksLimit: 5,
                         autoSkip: true,
-                        display: false,
+                        display: true,
                         },
                     gridLines: {
                         display: false,
@@ -120,7 +113,7 @@ function HooksChart(props){
                     }],
                 xAxes: [{
                     ticks: {
-                        display:false,
+                        display:true,
                     },
                     gridLines: {
                         display: false,
@@ -136,4 +129,4 @@ function HooksChart(props){
 }
 
 const mapStateToProps = (reduxState) => reduxState;
-export default connect(mapStateToProps)(HooksChart);
+export default connect(mapStateToProps)(BarChart);

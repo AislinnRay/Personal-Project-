@@ -126,12 +126,20 @@ class AddPlant extends Component {
     return (
       <div className="AddPlant-Container">
         <div className="Form">
+        {isEdit ? (
           <img
             className="form_img_preview"
             src={plant_img}
             //{`https://cdn.pixabay.com/photo/2019/02/08/21/53/plant-3984065_1280.jpg`}
             alt="potted plant"
           />
+          ) : (
+            <img
+            className="form_img_preview"
+            src={`https://cdn.pixabay.com/photo/2019/06/17/08/25/pastel-4279385_960_720.jpg`}
+            alt="potted plant"
+          />
+          )}
           <p>Image URL:</p>
           <input
             name="plant_img"

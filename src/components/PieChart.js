@@ -1,20 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
-import {
-  Radar,
-  Doughnut,
-  Bubble,
-  Scatter,
-} from "react-chartjs-2";
+import {Pie,} from "react-chartjs-2";
 
-function WaterLog(props){
+function PieChart(props){
     const [state, setState] = useState({
         chartData:
           {
             labels: ["Bi-weekly", "Weekly", "Semi-Weekly", "Monthly"],
             datasets: [
               {
-                label: "Plants",
+                label: "Notes",
                 data: [4, 2, 2, 5, props.count],
                 backgroundColor: [
                   "#617872",
@@ -38,10 +33,10 @@ function WaterLog(props){
         const array = props.plantReducer.plants
         const newArray = array.reduce(
             (acc, e) => {
-              if (acc[0].includes(e.water_interval)) {
-                acc[1][acc[0].indexOf(e.water_interval)]++;
+              if (acc[0].includes(e.note)) {
+                acc[1][acc[0].indexOf(e.note)]++;
               } else {
-                acc[0].push(e.water_interval);
+                acc[0].push(e.note);
                 acc[1].push(1);
               }
               return acc;
@@ -50,12 +45,11 @@ function WaterLog(props){
           )
           setState({
             chartData:
-              //props.chartData
               {
                 labels: newArray[0],
                 datasets: [
                   {
-                    label: "Plants",
+                    label: "Notes",
                     data: newArray[1],
                     backgroundColor: [
                       "#617872",
@@ -74,8 +68,7 @@ function WaterLog(props){
                 ],
               }
           })
-      },[props.plantReducer.plants]) // this [] is the dependency array that makes this not only componentDidMount but componentWillMount. Re-runs the use effect yayy!
-
+      },[props.plantReducer.plants])
 
     return(
         <div className="chart-container">
@@ -87,14 +80,14 @@ function WaterLog(props){
             position: 'center',
         }}
         >
-          <Doughnut
+          <Pie
             data={state.chartData}
             options={{
               maintainAspectRatio: false,
               responsive: true,
               title: {
                 display: true,
-                text: "Watering Frequency (Days)",
+                text: "Plant Information Trends",
                 fontSize: 28,
                 position: "top",
                 fontFamily: 'arvo',
@@ -109,7 +102,7 @@ function WaterLog(props){
                 yAxes: [{
                     ticks: {
                         beginAtZero: true,
-                        maxTicksLimit: 30,
+                        maxTicksLimit: 10,
                         autoSkip: true,
                         display: false,
                         },
@@ -129,9 +122,9 @@ function WaterLog(props){
             }}
           />
         </div>
-        </div>
+      </div>
     )
 }
 
 const mapStateToProps = (reduxState) => reduxState;
-export default connect(mapStateToProps)(WaterLog);
+export default connect(mapStateToProps)(PieChart);

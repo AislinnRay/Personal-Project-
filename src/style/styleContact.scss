@@ -16,16 +16,25 @@
 .contact-box {
   @include contact-box-style();
   padding: 10px;
-  input, .input-text{
+  input{
     @include contact-font(12pt);
     border-radius: 1px;
     padding-top: 1px;
     background-color: #eeeeec;
+    
+    &.input-text{
+      @extend input;
+    }
   }
-  input:focus, .input-text:focus{
+  input:focus{
     outline: none;
     background-color: $bright-white;
+    &.input-test:focus{
+      @extend input;
+    }
   }
+
+
   h5 {
     @include contact-font(14pt);
     margin-bottom: 5px;

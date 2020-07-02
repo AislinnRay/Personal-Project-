@@ -15,10 +15,10 @@
 }
 
 .Plant .plant_img {
-  height: 280px;
-  width: 280px;
-  margin-top: 30px;
-  margin-bottom: 30px;
+  height: 250px;
+  width: 250px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   background-position: center;
   -o-object-fit: cover;
      object-fit: cover;
@@ -32,11 +32,13 @@
 
 .Plant .plant_img .text-button-container .plant-title {
   font-size: 24px;
+  font-weight: 400;
 }
 
 .Plant .plant_img .text-button-container .plant-note {
   font-size: 25px;
   padding: 5px;
+  margin: 5px;
 }
 
 .buttons {

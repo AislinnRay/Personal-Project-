@@ -113,7 +113,7 @@ URL, REST methods, and a sample of the data that is being sent or received for e
 ## Point Plan:
 o	3+ responsive views (10) - components(Login.js, Register.js, Add.js, Profile.js)
 
-o	React hooks on 2 components (5) - components(HooksChart.js, HooksProfile.js)
+o	React hooks on 2 components (5) - components(HooksChart.js, HooksProfile.js, Contact.js)
 
 o	Functioning Authentication (10) - 
 

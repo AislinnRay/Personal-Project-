@@ -11,10 +11,10 @@
     // min-width: 200px;
     // max-height: 250px;
     // min-height: 200px;
-    height: 280px;
-    width: 280px;
-    margin-top: 30px;
-    margin-bottom: 30px;
+    height: 250px;
+    width: 250px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     background-position: center;
     object-fit: cover;
 
@@ -23,11 +23,13 @@
 
     .plant-title {
           font-size: 24px;
+          font-weight: 400;
         }
 
     .plant-note {
           font-size: 25px;
           padding: 5px;
+          margin:5px;
         }
       }
   }

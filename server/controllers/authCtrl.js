@@ -73,7 +73,7 @@ module.exports = {
         //console.log(req.session.user, "1")
         //console.log(req.session, "2")
         const {user_id} = req.session.user 
-        const user = await db.check_user(email)
+        const user = await db.check_user_id(user_id)
         
         if (password) {
         const salt = bcrypt.genSaltSync(10)

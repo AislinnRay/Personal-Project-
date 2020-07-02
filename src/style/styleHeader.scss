@@ -9,6 +9,16 @@
     left: -100px;
     padding-right: 20vw;
 }
+.header-profile-pic{
+  height:100px;
+  width:100px;
+  background-position: center;
+  object-fit: cover;
+  border-radius: 50%;
+  position:absolute;
+  right: 5vw;
+  top: 5px;
+}
 nav {
     &.primary-navigation {
       margin: 0 auto;
@@ -83,6 +93,12 @@ nav {
     .login-form-container {
         width: 300px;
       }
+   }
+
+   @media (max-width: 830px) {
+    .header-profile-pic{
+      display:none;
+    }
    }
 
    

@@ -6,7 +6,9 @@ import {connect} from 'react-redux'; // connects you to the redux state and then
 import {getUser} from '../redux/reducers/authReducer'
 import {setPlants} from '../redux/reducers/plantReducer'
 //import ClassChart from './ClassChart';
-import HooksChart from './HooksChart';
+import PieChart from './PieChart';
+import BarChart from './BarChart';
+import WaterLog from './WaterLog';
 
 class Dashboard extends Component {
     constructor(props) {
@@ -15,7 +17,6 @@ class Dashboard extends Component {
             plants: [],
         }
     }
-
     componentDidMount() {
         console.log(this.props)
         //this.props.getUser()
@@ -25,7 +26,6 @@ class Dashboard extends Component {
         else 
             {this.props.history.push('/')}
     } 
-
     setPlant = () => {
         console.log(this.props.user.user_id)
         axios
@@ -48,13 +48,25 @@ class Dashboard extends Component {
                             plant={plant} 
                             />
                     })}
+                    <div className="charts-container">
+                {this.props.plants.length > 0 && <BarChart className="charts"/>}
+                </div>
+                <div className="charts-container">
+                {this.props.plants.length > 0 && <PieChart className="charts"/>}
+                </div>
+                <div className="charts-container">
+                {this.props.plants.length > 0 && <WaterLog className="charts"/>}
+                </div>
                 </div>
                 {/* <div className="charts-container">
-                {this.props.plants.length > 0 && <ClassChart className="charts"/>}
-                </div> */}
-                <div className="charts-container">
-                {this.props.plants.length > 0 && <HooksChart className="charts"/>}
+                {this.props.plants.length > 0 && <BarChart className="charts"/>}
                 </div>
+                <div className="charts-container">
+                {this.props.plants.length > 0 && <PieChart className="charts"/>}
+                </div>
+                <div className="charts-container">
+                {this.props.plants.length > 0 && <WaterLog className="charts"/>}
+                </div> */}
             </div>
         )
     }

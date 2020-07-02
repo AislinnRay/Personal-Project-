@@ -1,26 +1,17 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import "../style/styleHeader.css";
 import Hamburger from "./Hamburger";
 
 const Header = (props) => {
-  const [profilePic, setProfilePic] = useState({
-    profile_pic: "",
-  });
-
-  // useEffect(() => {
-  //   console.log(props.user.profile_pic)
-  //   setProfilePic({
-  //     profile_pic: props.user.profile_pic || "",
-  //   })
-  // }, [props.user])
+  const [profile_pic, setProfilePic] = useState(props.user.profile_pic);
 
   return (
     <div>
       <h1>Plantsiful</h1>
       <span className="header-container">
-        <Hamburger/>
+        <Hamburger />
         <div>
           <nav role="navigation" className="primary-navigation">
             <ul>
@@ -48,18 +39,20 @@ const Header = (props) => {
                 <a href="#">About</a>
               </li>
               <li>
-                <Link to='/contact'>Contact</Link>
+                <Link to="/contact">Contact</Link>
               </li>
             </ul>
           </nav>
-          {/* <Link to="/dash">Dashboard</Link>
-        <Link to="/profile">Profile</Link> */}
         </div>
-        {/* <div className='header-profile-pic' 
-                 style={{ backgroundImage: `url('${props.user.profile_pic}')` }}>
-                 </div> */}
+        <Link to="/profile">
+        <img
+          className="header-profile-pic"
+          src={props.user.profile_pic}
+          alt="profile"/></Link>
       </span>
     </div>
   );
 };
-export default Header;
+// export default Header;
+const mapStateToProps = (reduxState) => reduxState.authReducer;
+export default connect(mapStateToProps)(Header);

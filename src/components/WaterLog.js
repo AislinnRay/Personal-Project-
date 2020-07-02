@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import {
-  Radar,
+  // Radar,
   Doughnut,
-  Bubble,
-  Scatter,
+  // Bubble,
+  // Scatter,
 } from "react-chartjs-2";
 
 function WaterLog(props){

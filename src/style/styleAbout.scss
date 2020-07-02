@@ -1,0 +1,30 @@
+@import "./mixins";
+@import "./variables";
+@import"./styleContact";
+
+.about-container {
+    @include flexCenter(column);
+    @include coverBackground(url('https://www.bostoncityscapes.com/wp-content/uploads/2019/03/Succulent-Plants.jpg'));
+    min-height: 70vh;
+    max-height:90vh;
+    padding-bottom:40px;
+    .text-container{
+    width: 900px;
+    height: 400px;
+    background: $black;
+    color:$white;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    padding: 50px 30px;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    .about-blurb{
+      @include contact-font(14pt);
+      font-weight:200;
+      padding: 0px 40px 0px 40px;
+      color:$bright-white;
+
+    }
+  }
+  }

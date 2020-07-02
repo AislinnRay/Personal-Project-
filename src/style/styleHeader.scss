@@ -48,6 +48,7 @@ nav {
         cursor: pointer;
       }
       ul li ul {
+        z-index: 5;
         visibility: hidden;
         opacity: 0;
         position: absolute;
@@ -58,6 +59,7 @@ nav {
       }
       ul li:hover > ul,
       ul li ul:hover {
+        z-index: 5;
         visibility: visible;
         opacity: 1;
         display: block;

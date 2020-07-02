@@ -67,6 +67,7 @@ nav.primary-navigation li:hover {
 }
 
 nav.primary-navigation ul li ul {
+  z-index: 5;
   visibility: hidden;
   opacity: 0;
   position: absolute;
@@ -78,6 +79,7 @@ nav.primary-navigation ul li ul {
 
 nav.primary-navigation ul li:hover > ul,
 nav.primary-navigation ul li ul:hover {
+  z-index: 5;
   visibility: visible;
   opacity: 1;
   display: block;

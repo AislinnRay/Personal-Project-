@@ -111,20 +111,51 @@ URL, REST methods, and a sample of the data that is being sent or received for e
 		<Route path = '/register' component = {Register} />
 
 ## Point Plan:
-o	3+ responsive views (10) - components(Login.js, Register.js, Add.js, Profile.js)
+o	3+ responsive views on 2 or more screen sizes (10) - 
+		Landing.js, 
+		Register.js, 
+		Add.js, 
+		Profile.js, 
+		AddPlant.js, 
+		Dashboard.js, 
+		Contact.js
 
-o	React hooks on 2 components (5) - components(HooksChart.js, HooksProfile.js, Contact.js)
+o	React hooks on 5 components (10) - 
+		WaterLog.js, 
+		PieChart.js, 
+		BarChart.js, 
+		HooksProfile.js, 
+		Contact.js
 
 o	Functioning Authentication (10) - 
+		redux
+		authCTRL
+		Landing.js
+		Register.js
 
-o	Redux with two reducers (15) - redux(store.js, reducers(authReducer.js, plantReducer.js))
+o	Redux with two reducers (15) - 
+		redux(
+			store.js, 
+			reducers(
+				authReducer.js, 
+				plantReducer.js))
 
-o	Sass/Less (10) - style
+o	Sass/Less (10) - 
+		style(
+			mixins - styleDash.scss
+			variables - styleFooter.scss
+			nesting - styleDash.scss
+			extends - styleContact.scss
+		)
 
-o	Node Mailer (10) - utils(emailUtil.js)
+o	Node Mailer (10) - 
+		utils(emailUtil.js)
 
-o	ChartJS (10) - components(HooksChart.js)
+o	ChartJS (10) - 
+		WaterLog.js, 
+		PieChart.js, 
+		BarChart.js, 
 
-o	Hosting (15)
+o	Hosting (15) - TBD
 
 

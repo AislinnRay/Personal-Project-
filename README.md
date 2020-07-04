@@ -159,3 +159,6 @@ o	ChartJS (10) -
 o	Hosting (15) - TBD
 
 
+https://cdn.pixabay.com/photo/2015/11/16/14/43/cat-1045782_960_720.jpg
+
+https://cdn.pixabay.com/photo/2017/05/13/17/31/leaf-2310212_960_720.jpg

@@ -68,7 +68,7 @@ VALUES
     ),
     ('Snake Plant'
     , 'Dracaena trifasciata'
-    , 'Water once every two weeks. Needs to be repotted soon'
+    , 'Water every two weeks.'
     , 'https://secure.img1-fg.wfcdn.com/im/33278590/compr-r85/8064/80643595/romam-snake-plant-in-planter.jpg'
     , 14
     , 'Living Room'
@@ -76,7 +76,7 @@ VALUES
     ),
     ('Spider Plant'
     , 'Chlorophytum comosum'
-    , 'Water once every two weeks.'
+    , 'Water every two weeks.'
     , 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQqHdHjbYPPzAoPvuFPyi3wIdTgJGF75CKVZQ&usqp=CAU'
     , 14
     , 'Den'
@@ -84,33 +84,33 @@ VALUES
     ),
     ('Christmas Cactus'
     , 'Schlumbergera truncata'
-    , 'Water once a week.'
+    , 'Water every two weeks.'
     , 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSG4IdYG_6EClofvi24CmpMY8SPSXKwFExsXQ&usqp=CAU'
-    , 7
+    , 14
     , 'Bathroom'
     , 1
     ),
     ('Umbrella Tree'
     , 'Schefflera S. actinophylla'
-    , 'Water once a week.'
+    , 'Water every two weeks.'
     , 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTsEtro32VyRC3oFvxiE53Q5TjTCm9CMLU64Q&usqp=CAU'
-    , 7
+    , 14
     , 'Dining Room'
     , 1
     ),
     ('Hens and Chicks'
     , 'Sempervivum tectorum'
-    , 'Water once a week.'
+    , 'Water once a month.'
     , 'https://cdn.pixabay.com/photo/2017/08/25/01/24/cacti-2678917__480.jpg'
-    , 7
+    , 30
     , 'Kitchen'
     , 1
     ),
     ('Mosaic Plant'
     , 'Fittonia argyroneura'
-    , 'Water once a week.'
+    , 'Water once a month.'
     , 'https://cdn.pixabay.com/photo/2017/11/06/23/25/fittonia-2925192__480.jpg'
-    , 7
+    , 30
     , 'Bathroom'
     , 1
     ),

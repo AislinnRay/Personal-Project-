@@ -17,8 +17,6 @@ module.exports = {
         const newUserObj = {...newUser[0], ...newUserInfo[0]}
 
         delete newUserObj.password
-
-        sendEmail(req)
         
         req.session.user = newUserObj 
         // is the same as what is below
@@ -32,6 +30,7 @@ module.exports = {
         // }
 
         res.status(200).send(req.session.user)
+        sendEmail(req)
     },
     login: async ( req, res ) => {
         const db = req.app.get('db')

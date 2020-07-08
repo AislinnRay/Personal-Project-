@@ -40,14 +40,17 @@ module.exports = {
         if ( !user[0]){
             return res.status(404).send('User does not exist')
         } else {
-            const userInfoTable = await db.check_user_info([user[0].user_id])
+            //const userInfoTable = await db.check_user_info([user[0].user_id])
             //console.log(user.user_id, "5")
             //console.log(userInfoTable, "4")
-            const tableObj = {...user[0], ...userInfoTable[0]}
-            delete tableObj.password
+            //const tableObj = {...user[0], ...userInfoTable[0]}
+            //delete tableObj.password
+
+            delete user.password
+
             const authenticated = bcrypt.compareSync(password, user[0].password)
             if (authenticated) {
-                req.session.user = tableObj
+                req.session.user = user
                 res.status(200).send(req.session.user)
             } else {
                 res.status(403).send('Username or password incorrect')
